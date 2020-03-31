@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-// Add note to see confirm eGit works
+
 public class Movie {
 	public String name;
 	public String description;
