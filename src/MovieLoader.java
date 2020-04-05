@@ -11,7 +11,7 @@ public class MovieLoader{
 	 * @param path Path to file
 	 * @return ArrayList of movies
 	 */
-	public static ArrayList<Event> Load(String path) {
+	public ArrayList<Event> Load(String path) {
 		try {
 			//Load JSON file
 			FileReader reader = new FileReader(path);
