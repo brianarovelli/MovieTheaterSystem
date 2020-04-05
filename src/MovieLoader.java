@@ -11,13 +11,13 @@ public class MovieLoader{
 	 * @param path Path to file
 	 * @return ArrayList of movies
 	 */
-	public static ArrayList<Movie> Load(String path) {
+	public static ArrayList<Event> Load(String path) {
 		try {
 			//Load JSON file
 			FileReader reader = new FileReader(path);
 			JSONArray moviesJSON = (JSONArray)new JSONParser().parse(reader);
 			//Create ArrayList to be filled
-			ArrayList<Movie> movies = new ArrayList<Movie>();
+			ArrayList<Event> movies = new ArrayList<Event>();
 			//Cycle through array of JSON Objects
 			for(int i = 0; i < moviesJSON.size(); i++) {
 				JSONObject movieJSON = (JSONObject)moviesJSON.get(i);
@@ -39,8 +39,9 @@ public class MovieLoader{
 					gSplit[j] = gSplit[j].replace("-", "");
 					g.add(Genre.valueOf(gSplit[j].strip().toUpperCase()));
 				}
+				Advisory ad = Advisory.valueOf(movieJSON.get("advisory").toString().toUpperCase());
 				//Add new movie to movie ArrayList
-				movies.add(new Movie(n, d, a, g));
+				movies.add(new Event(EventType.MOVIE, n, a, g, ad, 0, 0, null));
 			}
 			return movies;
 		} catch(Exception e) {

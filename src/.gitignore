@@ -7,3 +7,11 @@
 /Movie.class
 /Actor.class
 /MovieLoader.class
+/Beer.class
+/Candy.class
+/Popcorn.class
+/SeatType.class
+/Soda.class
+/Ticket.class
+/TicketDecorator.class
+/UserType.class

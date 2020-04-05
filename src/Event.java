@@ -3,8 +3,10 @@ import java.util.ArrayList;
 
 public class Event {
 	public EventType eventType;
-	public Genre genre;
+	public ArrayList<Genre> genre;
 	public Advisory advisory;
+	public String title;
+	public ArrayList<Actor> actors;
 	public double rating;
 	public double price;
 	public int points;
@@ -20,8 +22,10 @@ public class Event {
 	 * @param showTime
 	 */
 	
-	public Event(EventType eventType, Genre genre, Advisory advisory, double price, int points, Time showTime) {
+	public Event(EventType eventType, String title, ArrayList<Actor> actors, ArrayList<Genre> genre, Advisory advisory, double price, int points, Time showTime) {
 		this.eventType = eventType;
+		this.title = title;
+		this.actors = actors;
 		this.genre = genre;
 		this.advisory = advisory;
 		this.rating = 0;
@@ -55,11 +59,11 @@ public class Event {
 		reviews.add(review);
 	}
 
-	public Genre getGenre() {
+	public ArrayList<Genre> getGenre() {
 		return genre;
 	}
 
-	public void setGenre(Genre genre) {
+	public void setGenre(ArrayList<Genre> genre) {
 		this.genre = genre;
 	}
 
@@ -69,6 +73,22 @@ public class Event {
 
 	public void setAdvisery(Advisory advisory) {
 		this.advisory = advisory;
+	}
+	
+	public String getTitle() {
+		return title;
+	}
+
+	public void setActors(ArrayList<Actor> actors) {
+		this.actors = actors;
+	}
+	
+	public ArrayList<Actor> getActors() {
+		return actors;
+	}
+
+	public void setAdvisery(String title) {
+		this.title = title;
 	}
 
 	public double getRating() {
