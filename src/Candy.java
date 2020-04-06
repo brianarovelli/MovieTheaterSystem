@@ -4,12 +4,24 @@ public class Candy extends TicketDecorator {
 	
 	Ticket ticket;
 	
+	/** public Candy (Ticket ticket)
+	 * Creates new Candy object and sets Ticket
+	 * @param ticket
+	 */
 	public Candy (Ticket ticket) {
 		this.ticket = ticket;
 	}
+	
+	/** public String toString()
+	 * Adds Candy onto order description
+	 */
 	public String toString() {
 		return ticket.toString() + "/n" + ADD_ON + "Candy";
 	}
+	
+	/** public double getCost()
+	 * Adds cost of Candy onto order
+	 */
 	public double getCost() {
 		return ticket.getCost() + CANDY_COST;
 	}

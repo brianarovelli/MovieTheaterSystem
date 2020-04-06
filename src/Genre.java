@@ -7,6 +7,10 @@ public enum Genre {
 	
     public final String genre;
     
+    /** private Genre(String genre)
+     * Sets genre
+     * @param genre - genre of an event
+     */
 	private Genre(String genre) {
         this.genre = genre;
     }

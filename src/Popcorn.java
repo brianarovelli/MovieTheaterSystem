@@ -4,13 +4,25 @@ public class Popcorn extends TicketDecorator {
 	
 	Ticket ticket;
 
+	/** public Popcorn(Ticket ticket)
+	 * Creates new Popcorn object and sets Ticket
+	 * @param ticket
+	 */
 	public Popcorn(Ticket ticket) {
-	this.ticket = ticket;
+		this.ticket = ticket;
 	}
+	
+	/** public String toString()
+	 * Adds Popcorn onto order description
+	 */
 	public String toString() {
-	return ticket.toString() + "/n" + ADD_ON + "Popcorn";
+		return ticket.toString() + "/n" + ADD_ON + "Popcorn";
 	}
+	
+	/** public double getCost()
+	 * Adds cost of Popcorn onto order
+	 */
 	public double getCost() {
-	return ticket.getCost() + 8.85;
+		return ticket.getCost() + POPCORN_COST;
 	}
 }

@@ -59,6 +59,8 @@ public class Event {
 		reviews.add(review);
 	}
 
+	//GETTERS AND SETTERS	
+	
 	public ArrayList<Genre> getGenre() {
 		return genre;
 	}

@@ -20,12 +20,13 @@ public class MovieDriver {
 	
 	private static ArrayList<Event> init(){
 		MovieLoader init = new MovieLoader();
-		return init.Load("./output.json");
+		return init.Load("src/output.json");
 	}
 	
 	private static void printMenu() {
 		System.out.println("====================");
 		System.out.println(" 1. Explore movies");
+		System.out.println(" 2. Purchase a movie ticket");
 		System.out.println("-1. Quit program");
 		System.out.println("====================");
 	}
@@ -39,9 +40,20 @@ public class MovieDriver {
 				System.out.println(events.get(i).getTitle());
 			}
 			return true;
+		case 2:	
+			return ticketPurchaseMenu(events);
 		default:
 			return true;
 		}
+	}
+	
+	private static boolean ticketPurchaseMenu(ArrayList<Event> events) {
+		System.out.println(" Please input the number corresponding to your movie choice");
+		for(int i = 0; i < events.size(); i++) {
+			System.out.println(i + ": " + events.get(i).getTitle());
+		}
+		//TODO: this entire method, i'll do it tomorrow when i wake up
+		return true;
 	}
 	
 }
