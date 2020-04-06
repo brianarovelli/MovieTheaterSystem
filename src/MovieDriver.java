@@ -31,14 +31,18 @@ public class MovieDriver {
 		System.out.println("====================");
 	}
 	
+	private static void printEvents(ArrayList<Event> events) {
+		for(int i = 0; i < events.size(); i++) {
+			System.out.println(i + ": " + events.get(i).getTitle());
+		}
+	}
+	
 	private static boolean process(int choice, ArrayList<Event> events) {
 		switch(choice) {
 		case -1:
 			return false;
 		case 1:
-			for(int i = 0; i < events.size(); i++) {
-				System.out.println(events.get(i).getTitle());
-			}
+			printEvents(events);
 			return true;
 		case 2:	
 			return ticketPurchaseMenu(events);
@@ -49,9 +53,7 @@ public class MovieDriver {
 	
 	private static boolean ticketPurchaseMenu(ArrayList<Event> events) {
 		System.out.println(" Please input the number corresponding to your movie choice");
-		for(int i = 0; i < events.size(); i++) {
-			System.out.println(i + ": " + events.get(i).getTitle());
-		}
+		printEvents(events);
 		//TODO: this entire method, i'll do it tomorrow when i wake up
 		return true;
 	}
