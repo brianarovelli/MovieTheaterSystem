@@ -76,6 +76,42 @@ public class MovieDriver {
 		
 		/* Number of tickets */
 		System.out.println("\n******* PLEASE INPUT THE NUMBER OF TICKETS YOU WOULD LIKE TO PURCHASE *******");
+		Ticket ticket = numberofTickets();
+		
+		
+		//TODO We need to let the user pick seating location for scenario 2
+		
+		
+		/* Adding food onto ticket */
+		System.out.println("\nWould you like to add food and/or drink onto your ticket order?");
+		if(confirm())
+			addonPurchaseMenu();
+		
+		/* Total price, head to checkout or cancel order */
+		System.out.println("\nYour order has come up to... $" + ticket.getCost() + "! Would you like to head to checkout?");
+		if(confirm())
+			checkout();
+		/* Finish Movie ticket order*/
+		System.out.println("\nNow returning to Main Menu...");
+	}
+	
+	/** private static boolean confirm()
+	 * Confirms prior choice of user
+	 * @return choice
+	 */
+	private static boolean confirm() {
+		System.out.println("Please enter 'Y' for yes or 'N' for no");
+		String confirm = in.next();
+		if(confirm.equals("N"))
+			return false;
+		return true;
+	}
+	
+	/** private static Ticket numberofTickets()
+	 * Gets ticket number order from User and creates the Ticket object
+	 * @return Ticket
+	 */
+	private static Ticket numberofTickets() {
 		Ticket ticket = new BaseTicket();
 		System.out.println("\nPlease enter the amount of ADULT tickets you would like to purchase:");
 		int adulttickets = in.nextInt();
@@ -98,29 +134,7 @@ public class MovieDriver {
 		int totaltickets = adulttickets + childtickets + seniortickets;
 		System.out.println("You have entered: " + totaltickets + " tickets... This totals to a price of $" + ticket.getCost());
 		
-		
-		//TODO We need to let the user pick seating location for scenario 2
-		
-		
-		/* Adding food onto ticket */
-		System.out.println("\nWould you like to add food and/or drink onto your ticket order?");
-		if(confirm())
-			addonPurchaseMenu();
-		
-		/* Total price, head to checkout or cancel order */
-		System.out.println("\nYour order has come up to... $" + ticket.getCost() + "! Would you like to head to checkout?");
-		if(confirm())
-			checkout();
-		/* Finish Movie ticket order*/
-		System.out.println("\nNow returning to Main Menu...");
-	}
-	
-	private static boolean confirm() {
-		System.out.println("Please enter 'Y' for yes or 'N' for no");
-		String confirm = in.next();
-		if(confirm.equals("N"))
-			return false;
-		return true;
+		return ticket;
 	}
 	
 	private static void addonPurchaseMenu() {
