@@ -12,6 +12,7 @@ public class Event {
 	public int points;
 	public Time showTime;
 	public ArrayList<Review> reviews;
+	private static final double DEFAULT_TICKET_PRICE = 9.00;
 	
 	/** public Event(EventType eventType, Genre genre, Advisory advisory, double price, int points, Time showTime)
 	 * Creates Event object
@@ -29,7 +30,7 @@ public class Event {
 		this.genre = genre;
 		this.advisory = advisory;
 		this.rating = 0;
-		this.price = price;
+		this.price = DEFAULT_TICKET_PRICE;
 		this.points = points;
 		this.showTime = showTime;
 		reviews = new ArrayList<Review>();
