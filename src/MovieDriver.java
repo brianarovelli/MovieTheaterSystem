@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 /**
@@ -89,7 +93,7 @@ public class MovieDriver {
 		/* Total price, head to checkout or cancel order */
 		System.out.println("\nYour order has come up to... $" + ticket.getCost() + "! Would you like to head to checkout?");
 		if(confirm())
-			checkout();
+			checkout(ticket);
 		/* Finish Movie ticket order*/
 		System.out.println("\nNow returning to Main Menu...");
 	}
@@ -195,7 +199,7 @@ public class MovieDriver {
 		System.out.println("This totals to a price of $" + ticket.getCost());
 	}
 	
-	private static void checkout() {
+	private static void checkout(Ticket ticket) {
 		/*Payment Information*/
 		System.out.println("\nPlease enter anything and we will pretend it is payment information");
 		in.next();
@@ -204,11 +208,26 @@ public class MovieDriver {
 		/*Print tickets*/
 		System.out.println("Would you like to print your tickets?");
 		if(confirm())
-			printTickets();
+			printTickets(ticket);
 	}
 	
-	private static void printTickets() {
-		/*TODO: We need it for scenario 1. Make a text file that shows their ticket. Make it look fun or something*/
+	private static void printTickets(Ticket ticket) {
+		File file = new File("src/printedtickets.txt");
+		PrintWriter writer;
+		try {
+			writer = new PrintWriter(new FileWriter(file));
+			writer.println("====================");
+			writer.println("PICKUP YOUR TICKETS AND PRODUCTS AT THE FRONT DESK");
+			writer.println("\nTICKET ORDER");
+			writer.println(ticket.getDescription());
+			writer.println("\nTOTAL COST");
+			writer.println(ticket.getCost());
+			writer.println("====================");
+			writer.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	private static boolean loginMenu() {
