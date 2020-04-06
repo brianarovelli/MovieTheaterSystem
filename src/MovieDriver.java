@@ -75,11 +75,28 @@ public class MovieDriver {
 			return;
 		
 		/* Number of tickets */
-		System.out.println("\nPlease enter the amount of tickets you would like to purchase:");
-		int tickets = in.nextInt();
-		double price = events.get(choice).getPrice()*tickets;
-		System.out.println("You have entered: " + tickets + " tickets... This totals to a price of $" + price);
+		System.out.println("\n******* PLEASE INPUT THE NUMBER OF TICKETS YOU WOULD LIKE TO PURCHASE *******");
+		Ticket ticket = new BaseTicket();
+		System.out.println("\nPlease enter the amount of ADULT tickets you would like to purchase:");
+		int adulttickets = in.nextInt();
+		for(int i = 0; i < adulttickets; i++) {
+			ticket = new AdultTicket(ticket);
+		}
 		
+		System.out.println("\nPlease enter the amount of CHILD tickets you would like to purchase:");
+		int childtickets = in.nextInt();
+		for(int i = 0; i < childtickets; i++) {
+			ticket = new ChildTicket(ticket);
+		}
+		
+		System.out.println("\nPlease enter the amount of SENIOR tickets you would like to purchase:");
+		int seniortickets = in.nextInt();
+		for(int i = 0; i < seniortickets; i++) {
+			ticket = new SeniorTicket(ticket);
+		}
+		
+		int totaltickets = adulttickets + childtickets + seniortickets;
+		System.out.println("You have entered: " + totaltickets + " tickets... This totals to a price of $" + ticket.getCost());
 		
 		
 		//TODO We need to let the user pick seating location for scenario 2
@@ -91,7 +108,7 @@ public class MovieDriver {
 			addonPurchaseMenu();
 		
 		/* Total price, head to checkout or cancel order */
-		System.out.println("\nYour order has come up to... $" + price + "! Would you like to head to checkout?");
+		System.out.println("\nYour order has come up to... $" + ticket.getCost() + "! Would you like to head to checkout?");
 		if(confirm())
 			checkout();
 		/* Finish Movie ticket order*/

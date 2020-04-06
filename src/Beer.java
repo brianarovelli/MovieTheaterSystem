@@ -16,8 +16,8 @@ public class Beer extends TicketDecorator {
 	/** public String toString()
 	 * Adds beer onto order description
 	 */
-	public String toString() {
-		return ticket.toString() + "/n" + ADD_ON + " Beer";
+	public String getDescription() {
+		return ticket.getDescription() + "/n" + "1 Beer";
 	}
 	
 	/** public double getCost()

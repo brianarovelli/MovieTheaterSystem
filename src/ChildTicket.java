@@ -16,8 +16,8 @@ public class ChildTicket extends TicketDecorator {
 	/** public String toString()
 	 * Adds Child ticket onto order description
 	 */
-	public String toString() {
-		return ticket.toString() + "/n" + ADD_ON + " 1 Child Ticket";
+	public String getDescription() {
+		return ticket.getDescription() + "/n" + "1 Child Ticket";
 	}
 	
 	/** public double getCost()

@@ -15,8 +15,8 @@ public class Candy extends TicketDecorator {
 	/** public String toString()
 	 * Adds Candy onto order description
 	 */
-	public String toString() {
-		return ticket.toString() + "/n" + ADD_ON + "Candy";
+	public String getDescription() {
+		return ticket.getDescription() + "/n" + "1 Candy";
 	}
 	
 	/** public double getCost()

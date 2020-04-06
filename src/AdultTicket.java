@@ -2,7 +2,6 @@
 public class AdultTicket extends TicketDecorator{
 
 	private final static double ADULT_TICKET_COST = 13.00;
-	
 	private Ticket ticket;
 	
 	/** public AdultTicket (Ticket ticket)
@@ -17,8 +16,8 @@ public class AdultTicket extends TicketDecorator{
 	/** public String toString()
 	 * Adds adult ticket onto order description
 	 */
-	public String toString() {
-		return ticket.toString() + "/n" + ADD_ON + " 1 Adult Ticket";
+	public String getDescription() {
+		return ticket.getDescription() + "/n" + "1 Adult Ticket";
 	}
 	
 	/** public double getCost()

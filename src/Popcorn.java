@@ -15,8 +15,8 @@ public class Popcorn extends TicketDecorator {
 	/** public String toString()
 	 * Adds Popcorn onto order description
 	 */
-	public String toString() {
-		return ticket.toString() + "/n" + ADD_ON + "Popcorn";
+	public String getDescription() {
+		return ticket.getDescription() + "/n" + "1 Popcorn";
 	}
 	
 	/** public double getCost()
