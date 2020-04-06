@@ -17,7 +17,7 @@ public class SeniorTicket extends TicketDecorator {
 	 * Adds Senior ticket onto order description
 	 */
 	public String getDescription() {
-		return ticket.getDescription() + "/n" + "1 Senior Ticket";
+		return ticket.getDescription() + "\n1 Senior Ticket";
 	}
 	
 	/** public double getCost()

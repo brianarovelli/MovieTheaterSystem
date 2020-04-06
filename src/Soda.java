@@ -16,7 +16,7 @@ public class Soda extends TicketDecorator {
 	 * Adds Soda onto order description
 	 */
 	public String getDescription() {
-		return ticket.getDescription() + "/n" + "Soda";
+		return ticket.getDescription() + "\n1 Soda";
 	}
 	
 	/** public double getCost()

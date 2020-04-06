@@ -17,7 +17,7 @@ public class AdultTicket extends TicketDecorator{
 	 * Adds adult ticket onto order description
 	 */
 	public String getDescription() {
-		return ticket.getDescription() + "/n" + "1 Adult Ticket";
+		return ticket.getDescription() + "\n1 Adult Ticket";
 	}
 	
 	/** public double getCost()

@@ -64,7 +64,6 @@ public class MovieDriver {
 		printEvents(events);
 		int choice = in.nextInt();
 		purchaseTicket(choice, events);
-		//TODO: this entire method, i'll do it tomorrow when i wake up
 		return true;
 	}
 	
@@ -85,7 +84,7 @@ public class MovieDriver {
 		/* Adding food onto ticket */
 		System.out.println("\nWould you like to add food and/or drink onto your ticket order?");
 		if(confirm())
-			addonPurchaseMenu();
+			ticket = addonPurchaseMenu(ticket);
 		
 		/* Total price, head to checkout or cancel order */
 		System.out.println("\nYour order has come up to... $" + ticket.getCost() + "! Would you like to head to checkout?");
@@ -132,13 +131,68 @@ public class MovieDriver {
 		}
 		
 		int totaltickets = adulttickets + childtickets + seniortickets;
-		System.out.println("You have entered: " + totaltickets + " tickets... This totals to a price of $" + ticket.getCost());
+		printCurrentTicket(ticket);
+		System.out.println("You have entered: " + totaltickets);
 		
 		return ticket;
 	}
 	
-	private static void addonPurchaseMenu() {
+	private static Ticket addonPurchaseMenu(Ticket ticket) {
 		//TODO Here's where the user can add food and/or drinks to their order
+		boolean repeat = true;
+		int choice;
+		while(repeat) {
+			printFoodMenu();
+			try {
+				choice = in.nextInt();
+				switch(choice) {
+				case -1:
+					repeat = false;
+					break;
+				case 1:
+					ticket = new Popcorn(ticket);
+					printCurrentTicket(ticket);
+					repeat = true;
+					break;
+				case 2:	
+					ticket = new Soda(ticket);
+					printCurrentTicket(ticket);
+					repeat = true;
+					break;
+				case 3:
+					ticket = new Candy(ticket);
+					printCurrentTicket(ticket);
+					repeat =  true;
+					break;
+				case 4:
+					ticket = new Beer(ticket);
+					printCurrentTicket(ticket);
+					repeat = true;
+					break;
+				default:
+					repeat = true;
+					break;
+				}
+			} catch(Exception e) { in.next(); }
+		}
+		return ticket;
+	}
+	
+	
+	private static void printFoodMenu() {
+		System.out.println("\nPlease select from the following list!");
+		System.out.println("====================");
+		System.out.println(" 1. Popcorn");
+		System.out.println(" 2. Soda");
+		System.out.println(" 3. Candy");
+		System.out.println(" 4. Beer");
+		System.out.println("-1. Quit food ordering");
+		System.out.println("====================");
+	}
+	
+	private static void printCurrentTicket(Ticket ticket) {
+		System.out.println(ticket.getDescription());
+		System.out.println("This totals to a price of $" + ticket.getCost());
 	}
 	
 	private static void checkout() {
