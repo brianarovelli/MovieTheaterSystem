@@ -9,6 +9,7 @@
      "Yuka Terasaki",
      "Tomoyo Kurosawa" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Action , Anime , Adventure" },
 {
   "name": "The Call of the Wild",
@@ -44,6 +45,7 @@
      "Kate Hawley",
      "Denise Chamian" ],
   "rating": "",
+  "advisory": "PG",
   "genre": "Adventure , Drama" },
 {
   "name": "Parasite",
@@ -74,6 +76,7 @@
      "Ha-jun Lee",
      "Se-yeon Choi" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Mystery , Thriller , Comedy" },
 {
   "name": "Wendy",
@@ -103,6 +106,7 @@
      "Andy Eklund",
      "Stacy Jansen" ],
   "rating": "",
+  "advisory": "PG",
   "genre": "Adventure" },
 {
   "name": "The Last Full Measure",
@@ -156,11 +160,12 @@
      "Peggy Stamper",
      "Iris Hampton" ],
   "rating": "",
+  "advisory": "R",
   "genre": "Drama , War" },
 {
-  "name": "My Boyfriend&#x27;s Meds",
+  "name": "My Boyfriend's Meds",
   "description":
-   "Hank is a charming store owner who takes an endless assortment of prescription drugs for his multiple personality disorder. He&#x27;s delightfully surprised when his new girlfriend invites him to an island resort for a business retreat -- then horrified to learn that he forgot to bring his medication upon arrival. Now unable to control his symptoms, Hank soon finds his relationship in jeopardy as he suddenly transforms into a wild and obnoxious loudmouth.",
+   "Hank is a charming store owner who takes an endless assortment of prescription drugs for his multiple personality disorder. He's delightfully surprised when his new girlfriend invites him to an island resort for a business retreat -- then horrified to learn that he forgot to bring his medication upon arrival. Now unable to control his symptoms, Hank soon finds his relationship in jeopardy as he suddenly transforms into a wild and obnoxious loudmouth.",
   "actors":
    [ "Diego Kaplan",
      "Jaime Camil",
@@ -187,12 +192,13 @@
      "Elisa Martín González",
      "Lorena Tinoco" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Comedy" },
 {
   "name":
    "Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)",
   "description":
-   "It&#x27;s open season on Harley Quinn when her explosive breakup with the Joker puts a big fat target on her back. Unprotected and on the run, Quinn faces the wrath of narcissistic crime boss Black Mask, his right-hand man, Victor Zsasz, and every other thug in the city. But things soon even out for Harley when she becomes unexpected allies with three deadly women -- Huntress, Black Canary and Renee Montoya.",
+   "It's open season on Harley Quinn when her explosive breakup with the Joker puts a big fat target on her back. Unprotected and on the run, Quinn faces the wrath of narcissistic crime boss Black Mask, his right-hand man, Victor Zsasz, and every other thug in the city. But things soon even out for Harley when she becomes unexpected allies with three deadly women -- Huntress, Black Canary and Renee Montoya.",
   "actors":
    [ "Cathy Yan",
      "Margot Robbie",
@@ -227,6 +233,7 @@
      "Erin Benach",
      "Rich Delia" ],
   "rating": "",
+  "advisory": "PG",
   "genre": "Action , Adventure" },
 {
   "name": "Jojo Rabbit",
@@ -269,11 +276,12 @@
      "Mayes C. Rubeo",
      "Des Hamilton" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Comedy , Drama" },
 {
   "name": "1917",
   "description":
-   "During World War I, two British soldiers -- Lance Cpl. Schofield and Lance Cpl. Blake -- receive seemingly impossible orders. In a race against time, they must cross over into enemy territory to deliver a message that could potentially save 1,600 of their fellow comrades -- including Blake&#x27;s own brother.",
+   "During World War I, two British soldiers -- Lance Cpl. Schofield and Lance Cpl. Blake -- receive seemingly impossible orders. In a race against time, they must cross over into enemy territory to deliver a message that could potentially save 1,600 of their fellow comrades -- including Blake's own brother.",
   "actors":
    [ "Sam Mendes",
      "George MacKay",
@@ -319,6 +327,7 @@
      "David Crossman",
      "Nina Gold" ],
   "rating": "",
+  "advisory": "R",
   "genre": "Drama , War , History" },
 {
   "name": "Portrait of a Lady on Fire",
@@ -345,17 +354,18 @@
      "Dorothée Guiraud",
      "Christel Baras" ],
   "rating": "",
+  "advisory": "PG",
   "genre": "History , Romance , Drama" },
 {
   "name": "The Photograph",
   "description":
-   "When famed photographer Christina Eames dies unexpectedly, she leaves her estranged daughter, Mae, hurt, angry and full of questions. When Mae finds a photograph tucked away in a safe-deposit box, she soon finds herself delving into her mother&#x27;s early life -- an investigation that leads to an unexpected romance with a rising journalist.",
+   "When famed photographer Christina Eames dies unexpectedly, she leaves her estranged daughter, Mae, hurt, angry and full of questions. When Mae finds a photograph tucked away in a safe-deposit box, she soon finds herself delving into her mother's early life -- an investigation that leads to an unexpected romance with a rising journalist.",
   "actors":
    [ "Stella Meghie",
      "Issa Rae",
      "LaKeith Stanfield",
      "Chanté Adams",
-     "Y&#x27;lan Noel",
+     "Y'lan Noel",
      "Lil Rel Howery",
      "Courtney B. Vance",
      "Jasmine Cephas Jones",
@@ -377,6 +387,7 @@
      "Keri Langerman",
      "Ashley Ingram" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Drama , Romance" },
 {
   "name": "Bad Boys for Life",
@@ -422,6 +433,7 @@
      "Mary Vernieu",
      "Lindsay Graham" ],
   "rating": "",
+  "advisory": "R",
   "genre": "Action , Comedy" },
 {
   "name": "EMMA.",
@@ -434,7 +446,7 @@
      "Bill Nighy",
      "Mia Goth",
      "Miranda Hart",
-     "Josh O&#x27;Connor",
+     "Josh O'Connor",
      "Callum Turner",
      "Rupert Graves",
      "Gemma Whelan",
@@ -462,6 +474,7 @@
      "Alexandra Byrne",
      "Jessica Ronane" ],
   "rating": "",
+  "advisory": "PG",
   "genre": "Comedy" },
 {
   "name": "Dolittle",
@@ -516,6 +529,7 @@
      "Jenny Beavan",
      "Lucy Bevan" ],
   "rating": "",
+  "advisory": "G",
   "genre": "Comedy , Fantasy , Adventure , Kids , Family" },
 {
   "name": "Brahms: The Boy II",
@@ -549,43 +563,12 @@
      "Aieisha Li",
      "Deanna Brigidi" ],
   "rating": "",
-  "genre": "Horror , Mystery , Thriller" },
-{
-  "name": "Sonic the Hedgehog",
-  "description":
-   "After staging his own suicide, a crazed scientist uses his power to become invisible to stalk and terrorize his ex-girlfriend. When the police refuse to believe her story, she decides to take matters into her own hands and fight back.",
-  "actors":
-   [ "Leigh Whannell",
-     "Elisabeth Moss",
-     "Oliver Jackson-Cohen",
-     "Aldis Hodge",
-     "Storm Reid",
-     "Harriet Dyer",
-     "Michael Dorman",
-     "Benedict Hardie",
-     "Amali Golden",
-     "Anthony Brandon Wong",
-     "Leigh Whannell",
-     "Jason Blum",
-     "Kylie du Fresne",
-     "Leigh Whannell",
-     "Beatriz Sequeira",
-     "Rosemary Blight",
-     "Ben Grant",
-     "Jeanette Volturno",
-     "Stefan Duscio",
-     "Andy Canny",
-     "Benjamin Wallfisch",
-     "Alex Holmes",
-     "Alice Lanagan",
-     "Emily Seresin",
-     "Terri Taylor" ],
-  "rating": "",
+  "advisory": "PG",
   "genre": "Horror , Mystery , Thriller" },
 {
   "name": "Jumanji: The Next Level",
   "description":
-   "When Spencer goes back into the fantastical world of Jumanji, pals Martha, Fridge and Bethany re-enter the game to bring him home. But the game is now broken -- and fighting back. Everything the friends know about Jumanji is about to change, as they soon discover there&#x27;s more obstacles and more danger to overcome.",
+   "When Spencer goes back into the fantastical world of Jumanji, pals Martha, Fridge and Bethany re-enter the game to bring him home. But the game is now broken -- and fighting back. Everything the friends know about Jumanji is about to change, as they soon discover there's more obstacles and more danger to overcome.",
   "actors":
    [ "Jake Kasdan",
      "Dwayne Johnson",
@@ -598,7 +581,7 @@
      "Morgan Turner",
      "Ashley Scott",
      "Madison Iseman",
-     "Ser&#x27;Darius Blain",
+     "Ser'Darius Blain",
      "Danny DeVito",
      "Danny Glover",
      "Rhys Darby",
@@ -640,11 +623,12 @@
      "Jeanne McCarthy",
      "Nicole Abellera Hallman" ],
   "rating": "",
+  "advisory": "PG",
   "genre": "Action , Comedy , Fantasy , Adventure" },
 {
   "name": "The Lodge",
   "description":
-   "During a family retreat to a remote winter cabin over the holidays, the father is forced to abruptly depart for work, leaving his two children in the care of his new girlfriend, Grace. Isolated and alone, a blizzard traps them inside the lodge as terrifying events summon specters from Grace&#x27;s dark past.",
+   "During a family retreat to a remote winter cabin over the holidays, the father is forced to abruptly depart for work, leaving his two children in the care of his new girlfriend, Grace. Isolated and alone, a blizzard traps them inside the lodge as terrifying events summon specters from Grace's dark past.",
   "actors":
    [ "Veronika Franz",
      "Severin Fiala",
@@ -670,6 +654,7 @@
      "Sophie Lefebvre",
      "Dixie Chassay" ],
   "rating": "",
+  "advisory": "R",
   "genre": "Horror , Mystery , Thriller" },
 {
   "name": "Once Were Brothers: Robbie Robertson and The Band",
@@ -683,10 +668,11 @@
      "Dave Harris",
      "Michael Levine",
      "Kiarash Sadigh",
-     "Eamonn O&#x27;Connor",
+     "Eamonn O'Connor",
      "Matthew Chalmers",
      "Linden Li" ],
   "rating": "",
+  "advisory": "G",
   "genre": "Music" },
 {
   "name": "Impractical Jokers: The Movie",
@@ -714,6 +700,7 @@
      "Daniel A. Davila",
      "Erinn Knight" ],
   "rating": "",
+  "advisory": "R",
   "genre": "Comedy" },
 {
   "name": "Little Women",
@@ -739,8 +726,8 @@
      "Denise Di Novi",
      "Robin Swicord",
      "Adam Merims",
-     "Evelyn O&#x27;Neill",
-     "Rachel O&#x27;Connor",
+     "Evelyn O'Neill",
+     "Rachel O'Connor",
      "Arnon Milchan",
      "Yorick Le Saux",
      "Nick Houy",
@@ -754,11 +741,12 @@
      "Francine Maisler",
      "Kathy Driscoll-Mohler" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Drama" },
 {
   "name": "Star Wars: The Rise of Skywalker",
   "description":
-   "When it&#x27;s discovered that the evil Emperor Palpatine did not die at the hands of Darth Vader, the rebels must race against the clock to find out his whereabouts. Finn and Poe lead the Resistance to put a stop to the First Order&#x27;s plans to form a new Empire, while Rey anticipates her inevitable confrontation with Kylo Ren.",
+   "When it's discovered that the evil Emperor Palpatine did not die at the hands of Darth Vader, the rebels must race against the clock to find out his whereabouts. Finn and Poe lead the Resistance to put a stop to the First Order's plans to form a new Empire, while Rey anticipates her inevitable confrontation with Kylo Ren.",
   "actors":
    [ "J.J. Abrams",
      "Carrie Fisher",
@@ -771,7 +759,7 @@
      "Naomi Ackie",
      "Domhnall Gleeson",
      "Richard E. Grant",
-     "Lupita Nyong&#x27;o",
+     "Lupita Nyong'o",
      "Keri Russell",
      "Joonas Suotamo",
      "Kelly Marie Tran",
@@ -803,6 +791,7 @@
      "April Webster",
      "Alyssa Weisberg" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Action , Fantasy , Adventure , Sci-Fi" },
 {
   "name": "Underwater",
@@ -839,11 +828,12 @@
      "Dorotka Sapinska",
      "Angela Demo" ],
   "rating": "",
+  "advisory": "R",
   "genre": "Mystery , Thriller , Horror , Sci-Fi" },
 {
   "name": "The Turning",
   "description":
-   "Kate Mandell takes a job as a nanny for two young orphans at an isolated Gothic mansion in the Maine countryside. She soon learns that the children -- Miles and Flora -- are emotionally distant and unstable. When strange events start to plague Kate and the siblings, she begins to suspect that the estate&#x27;s dark corridors are home to a malevolent entity.",
+   "Kate Mandell takes a job as a nanny for two young orphans at an isolated Gothic mansion in the Maine countryside. She soon learns that the children -- Miles and Flora -- are emotionally distant and unstable. When strange events start to plague Kate and the siblings, she begins to suspect that the estate's dark corridors are home to a malevolent entity.",
   "actors":
    [ "Floria Sigismondi",
      "Mackenzie Davis",
@@ -871,11 +861,12 @@
      "Leslee Feldman",
      "Priscilla John" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Mystery , Thriller , Horror" },
 {
   "name": "Bombshell",
   "description":
-   "The provocative real story of three whip-smart, ambitious, strong women who anchored one of America&#x27;s most powerful news networks -- becoming headlines themselves when they risked everything to stand up to the man who made them famous.",
+   "The provocative real story of three whip-smart, ambitious, strong women who anchored one of America's most powerful news networks -- becoming headlines themselves when they risked everything to stand up to the man who made them famous.",
   "actors":
    [ "Jay Roach",
      "Charlize Theron",
@@ -926,6 +917,7 @@
      "Allison Jones",
      "Ben Harris" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Drama" },
 {
   "name": "The Assistant",
@@ -951,7 +943,7 @@
      "Philipp Engelhorn",
      "Avy Eschenasy",
      "Leah Giblin",
-     "Sean King O&#x27;Grady",
+     "Sean King O'Grady",
      "Michael Latham",
      "Kitty Green",
      "Fletcher Chancey",
@@ -960,6 +952,7 @@
      "Rachel Dainer-Best",
      "Tamar-kali" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Drama" },
 {
   "name": "Frozen II",
@@ -991,11 +984,12 @@
      "Christophe Beck",
      "Jamie Sparer Roberts" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Animation , Musical , Adventure , Kids , Family , Comedy" },
 {
   "name": "A Beautiful Day in the Neighborhood",
   "description":
-   "Lloyd Vogel is an investigative journalist who receives an assignment to profile Fred Rogers, aka Mr. Rogers. He approaches the interview with skepticism, as he finds it hard to believe that anyone can have such a good nature. But Roger&#x27;s empathy, kindness and decency soon chips away at Vogel&#x27;s jaded outlook on life, forcing the reporter to reconcile with his own painful past.",
+   "Lloyd Vogel is an investigative journalist who receives an assignment to profile Fred Rogers, aka Mr. Rogers. He approaches the interview with skepticism, as he finds it hard to believe that anyone can have such a good nature. But Roger's empathy, kindness and decency soon chips away at Vogel's jaded outlook on life, forcing the reporter to reconcile with his own painful past.",
   "actors":
    [ "Marielle Heller",
      "Tom Hanks",
@@ -1030,6 +1024,7 @@
      "Anne McCabe",
      "Nate Heller" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Drama , Biography" },
 {
   "name": "Ford v Ferrari",
@@ -1072,14 +1067,15 @@
      "Daniel Orlandi",
      "Ronna Kress" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Biography , Drama , History" },
 {
   "name": "Saint Frances",
   "description":
-   "After an abortion, a deadbeat nanny finds friendship with the 6-year-old she&#x27;s hired to watch.",
+   "After an abortion, a deadbeat nanny finds friendship with the 6-year-old she's hired to watch.",
   "actors":
    [ "Alex Thompson",
-     "Kelly O&#x27;Sullivan",
+     "Kelly O'Sullivan",
      "William Drain",
      "Laura T. Fisher",
      "Mary Beth Fisher",
@@ -1089,25 +1085,26 @@
      "Lily Mojekwu",
      "Bradley Grant Smith",
      "Jim True-Frost",
-     "Kelly O&#x27;Sullivan",
+     "Kelly O'Sullivan",
      "James Choi",
      "Pierce Cravens",
      "Ian Keiser",
      "Raphael Nash",
-     "Kelly O&#x27;Sullivan",
+     "Kelly O'Sullivan",
      "Nate Hurtsellers",
      "Alex Babbitt",
      "Quinn Tsan",
-     "Maggie O&#x27;Brien",
+     "Maggie O'Brien",
      "Alexis Jade Links",
      "Mickie Paskal",
      "Jennifer Rudnicke" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Drama , Comedy" },
 {
   "name": "The Gentlemen",
   "description":
-   "Mickey Pearson is an American expatriate who became rich by building a highly profitable marijuana empire in London. When word gets out that he&#x27;s looking to cash out of the business, it soon triggers an array of plots and schemes -- including bribery and blackmail -- from shady characters who want to steal his domain.",
+   "Mickey Pearson is an American expatriate who became rich by building a highly profitable marijuana empire in London. When word gets out that he's looking to cash out of the business, it soon triggers an array of plots and schemes -- including bribery and blackmail -- from shady characters who want to steal his domain.",
   "actors":
    [ "Guy Ritchie",
      "Matthew McConaughey",
@@ -1154,6 +1151,7 @@
      "Michael Wilkinson",
      "Lucinda Syson" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Drama , Comedy , Crime" },
 {
   "name": "Uncut Gems",
@@ -1192,11 +1190,12 @@
      "Miyako Bellizzi",
      "Francine Maisler" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Mystery , Thriller , Comedy" },
 {
   "name": "Spies in Disguise",
   "description":
-   "Super spy Lance Sterling and scientist Walter Beckett are almost exact opposites. Lance is smooth, suave and debonair. Walter is not. But what Walter lacks in social skills he makes up for in smarts and invention, creating the awesome gadgets Lance uses on his epic missions. But when events take an unexpected turn, Walter and Lance suddenly have to rely on each other in a whole new way. And if this odd couple can&#x27;t learn to work as a team, the whole world is in peril.",
+   "Super spy Lance Sterling and scientist Walter Beckett are almost exact opposites. Lance is smooth, suave and debonair. Walter is not. But what Walter lacks in social skills he makes up for in smarts and invention, creating the awesome gadgets Lance uses on his epic missions. But when events take an unexpected turn, Walter and Lance suddenly have to rely on each other in a whole new way. And if this odd couple can't learn to work as a team, the whole world is in peril.",
   "actors":
    [ "Troy Quane",
      "Nick Bruno",
@@ -1226,11 +1225,12 @@
      "Michael Knapp",
      "Christian Kaplan" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Animation , Adventure , Kids , Family , Comedy , Action" },
 {
   "name": "The Whistlers",
   "description":
-   "A Romanian police officer, determined to free from prison a crooked businessman who knows where a mobster&#x27;s money is hidden, must learn the difficult ancestral language used on the island of Gomera.",
+   "A Romanian police officer, determined to free from prison a crooked businessman who knows where a mobster's money is hidden, must learn the difficult ancestral language used on the island of Gomera.",
   "actors":
    [ "Corneliu Porumboiu",
      "Vlad Ivanov",
@@ -1251,6 +1251,7 @@
      "Tudor Mircea",
      "Sylvie Pialat" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Mystery , Thriller , Drama , Comedy" },
 {
   "name": "Beanpole",
@@ -1279,6 +1280,7 @@
      "Olga Smirnova",
      "Vladimir Golov" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Drama" },
 {
   "name": "Gretel &amp; Hansel",
@@ -1308,11 +1310,12 @@
      "Claire Curry",
      "Julie Harkin" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Fantasy , Horror" },
 {
   "name": "Joker",
   "description":
-   "Forever alone in a crowd, failed comedian Arthur Fleck seeks connection as he walks the streets of Gotham City. Arthur wears two masks -- the one he paints for his day job as a clown, and the guise he projects in a futile attempt to feel like he&#x27;s part of the world around him. Isolated, bullied and disregarded by society, Fleck begins a slow descent into madness as he transforms into the criminal mastermind known as the Joker.",
+   "Forever alone in a crowd, failed comedian Arthur Fleck seeks connection as he walks the streets of Gotham City. Arthur wears two masks -- the one he paints for his day job as a clown, and the guise he projects in a futile attempt to feel like he's part of the world around him. Isolated, bullied and disregarded by society, Fleck begins a slow descent into madness as he transforms into the criminal mastermind known as the Joker.",
   "actors":
    [ "Todd Phillips",
      "Joaquin Phoenix",
@@ -1357,11 +1360,12 @@
      "Mark Bridges",
      "Shayna Markowitz" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Drama , Crime" },
 {
   "name": "The Song of Names",
   "description":
-   "A child befriends a Polish violin prodigy whose parents leave him in his family&#x27;s care. The two boys become like brothers until the musician disappears. Forty years later, he gets his first clue as to what happened to his childhood best friend.",
+   "A child befriends a Polish violin prodigy whose parents leave him in his family's care. The two boys become like brothers until the musician disappears. Forty years later, he gets his first clue as to what happened to his childhood best friend.",
   "actors":
    [ "François Girard",
      "Tim Roth",
@@ -1390,14 +1394,15 @@
      "Deirdre Bowen",
      "Anne Dixon" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Drama , Mystery , Thriller" },
 {
   "name": "Ordinary Love",
   "description":
    "Joan and Tom have been married for many years. An everyday couple with a remarkable love, there is an ease to their relationship which only comes from spending a lifetime together. When Joan is diagnosed with breast cancer, the course of her treatment shines a light on their enduring devotion as they find the humor and grace to survive a year of adversity.",
   "actors":
-   [ "Lisa Barros D&#x27;Sa",
-     "Lisa Barros D&#x27;Sa",
+   [ "Lisa Barros D'Sa",
+     "Lisa Barros D'Sa",
      "Glenn Leyburn",
      "Liam Neeson",
      "Lesley Manville",
@@ -1421,7 +1426,7 @@
      "Jo Bamford",
      "René Besson",
      "Mark Huffam",
-     "Lisa Barros D&#x27;Sa",
+     "Lisa Barros D'Sa",
      "Glenn Leyburn",
      "Piers McGrail",
      "Nick Emerson",
@@ -1432,11 +1437,12 @@
      "Des Hamilton",
      "Georgia Topley" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Drama , Romance" },
 {
   "name": "Burden",
   "description":
-   "A former member of the Ku Klux Klan learns tolerance through love and faith when he&#x27;s taken in by an African American reverend.",
+   "A former member of the Ku Klux Klan learns tolerance through love and faith when he's taken in by an African American reverend.",
   "actors":
    [ "Andrew Heckler",
      "Garrett Hedlund",
@@ -1461,11 +1467,12 @@
      "Stephanie Hamilton",
      "Anette Cseri" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Drama" },
 {
   "name": "Greed",
   "description":
-   "After a damaging public inquiry, a billionaire&#x27;s image is tarnished. To save his reputation, he decides to bounce back with a highly publicized and extravagant party celebrating his 60th birthday on the Greek island of Mykonos.",
+   "After a damaging public inquiry, a billionaire's image is tarnished. To save his reputation, he decides to bounce back with a highly publicized and extravagant party celebrating his 60th birthday on the Greek island of Mykonos.",
   "actors":
    [ "Michael Winterbottom",
      "Steve Coogan",
@@ -1501,6 +1508,7 @@
      "Anthony Unwin",
      "Sarah Crowe" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Comedy , Drama" },
 {
   "name": "The Traitor",
@@ -1526,6 +1534,7 @@
      "Fabiano Gullane",
      "Caio Gullane" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Drama , Biography , Crime" },
 {
   "name": "Corpus Christi",
@@ -1553,6 +1562,7 @@
      "Piotr Sobocinski Jr.",
      "Przemyslaw Chruscielewski" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Drama" },
 {
   "name": "And Then We Danced",
@@ -1579,11 +1589,12 @@
      "Teo Baramidze",
      "Sulejmen Peljto" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Romance , Drama" },
 {
   "name": "Knives Out",
   "description":
-   "When renowned crime novelist Harlan Thrombey dies just after his 85th birthday, the inquisitive and debonair Detective Benoit Blanc arrives at his estate to investigate. From Harlan&#x27;s dysfunctional family to his devoted staff, Blanc sifts through a web of red herrings and self-serving lies to uncover the truth behind Thrombey&#x27;s untimely demise.",
+   "When renowned crime novelist Harlan Thrombey dies just after his 85th birthday, the inquisitive and debonair Detective Benoit Blanc arrives at his estate to investigate. From Harlan's dysfunctional family to his devoted staff, Blanc sifts through a web of red herrings and self-serving lies to uncover the truth behind Thrombey's untimely demise.",
   "actors":
    [ "Rian Johnson",
      "Daniel Craig",
@@ -1618,6 +1629,7 @@
      "Jenny Eagan",
      "Mary Vernieu" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Drama , Mystery , Thriller , Comedy" },
 {
   "name": "Downhill",
@@ -1653,11 +1665,12 @@
      "Jeanne McCarthy",
      "Nicole Abellera Hallman" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Comedy" },
 {
   "name": "Just Mercy",
   "description":
-   "After graduating from Harvard, Bryan Stevenson heads to Alabama to defend those wrongly condemned or those not afforded proper representation. One of his first cases is that of Walter McMillian, who is sentenced to die in 1987 for the murder of an 18-year-old girl, despite evidence proving his innocence. In the years that follow, Stevenson encounters racism and legal and political maneuverings as he tirelessly fights for McMillian&#x27;s life.",
+   "After graduating from Harvard, Bryan Stevenson heads to Alabama to defend those wrongly condemned or those not afforded proper representation. One of his first cases is that of Walter McMillian, who is sentenced to die in 1987 for the murder of an 18-year-old girl, despite evidence proving his innocence. In the years that follow, Stevenson encounters racism and legal and political maneuverings as he tirelessly fights for McMillian's life.",
   "actors":
    [ "Destin Daniel Cretton",
      "Michael B. Jordan",
@@ -1666,7 +1679,7 @@
      "Rob Morgan",
      "Tim Blake Nelson",
      "Rafe Spall",
-     "O&#x27;Shea Jackson Jr.",
+     "O'Shea Jackson Jr.",
      "Karan Kendrick",
      "Drew Scheid",
      "Steve Coulter",
@@ -1697,6 +1710,7 @@
      "Francine Jamison-Tanchuck",
      "Carmen Cuba" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Drama" },
 {
   "name": "Seberg",
@@ -1705,7 +1719,7 @@
   "actors":
    [ "Benedict Andrews",
      "Kristen Stewart",
-     "Jack O&#x27;Connell",
+     "Jack O'Connell",
      "Anthony Mackie",
      "Margaret Qualley",
      "Zazie Beetz",
@@ -1732,11 +1746,12 @@
      "Michael Wilkinson",
      "Michael Wilkinson" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Drama , History , Biography" },
 {
   "name": "Fantasy Island",
   "description":
-   "The enigmatic Mr. Roarke makes the secret dreams of his guests come true at a luxurious tropical resort. But when the fantasies turn into nightmares, the visitors must soon solve the island&#x27;s mystery in order to escape with their lives.",
+   "The enigmatic Mr. Roarke makes the secret dreams of his guests come true at a luxurious tropical resort. But when the fantasies turn into nightmares, the visitors must soon solve the island's mystery in order to escape with their lives.",
   "actors":
    [ "Jeff Wadlow",
      "Michael Peña",
@@ -1766,6 +1781,7 @@
      "Terri Taylor",
      "Sarah Domeier Lindo" ],
   "rating": "",
+  "advisory": "PG13",
   "genre": "Horror" }
 ]
 

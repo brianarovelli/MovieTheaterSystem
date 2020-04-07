@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+/* Holds all necessary information for movie */
 public class Movie {
 	public String name;
 	public String description;

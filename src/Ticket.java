@@ -1,14 +1,27 @@
 import java.util.ArrayList;
 
-public abstract class Ticket {
-public static int DEF_TICKET_PRICE = 10;	
-	
-	// will modify description and price in sublasses
+public abstract class Ticket {	
+	protected Movie movie;
 	protected String description;
-	protected int price = DEF_TICKET_PRICE;
+	protected ArrayList<Seat> seat;
+	protected Venue venue;
 	
-	// Then the description for printed file with add movie name attribute to this
-	public abstract String toString();
-	
+	public String getDescription() {
+		return description;
+	}
+	public ArrayList<Seat> getSeat() {
+		return seat;
+	}
+	public void setSeat(ArrayList<Seat>  seat) {
+		this.seat = seat;
+	}
+	public Venue getVenue() {
+		return venue;
+	}
+	public void setVenue(Venue venue) {
+		this.venue = venue;
+	}
 	public abstract double getCost();
+	
+	public abstract int getPoints();
 }

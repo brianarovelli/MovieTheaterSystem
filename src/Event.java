@@ -3,13 +3,17 @@ import java.util.ArrayList;
 
 public class Event {
 	public EventType eventType;
-	public Genre genre;
+	public ArrayList<Genre> genre;
 	public Advisory advisory;
+	public String title;
+	public String description;
+	public ArrayList<Actor> actors;
 	public double rating;
 	public double price;
 	public int points;
 	public Time showTime;
 	public ArrayList<Review> reviews;
+	private static final double DEFAULT_TICKET_PRICE = 9.00;
 	
 	/** public Event(EventType eventType, Genre genre, Advisory advisory, double price, int points, Time showTime)
 	 * Creates Event object
@@ -20,17 +24,28 @@ public class Event {
 	 * @param showTime
 	 */
 	
-	public Event(EventType eventType, Genre genre, Advisory advisory, double price, int points, Time showTime) {
+	public Event(EventType eventType, String title, String description, ArrayList<Actor> actors, ArrayList<Genre> genre, Advisory advisory, double price, int points, Time showTime) {
 		this.eventType = eventType;
+		this.title = title;
+		this.description = description;
+		this.actors = actors;
 		this.genre = genre;
 		this.advisory = advisory;
 		this.rating = 0;
-		this.price = price;
+		this.price = DEFAULT_TICKET_PRICE;
 		this.points = points;
 		this.showTime = showTime;
 		reviews = new ArrayList<Review>();
 	}
 	
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	/** public void calculateRating()
 	 * Calculates the rating of a movie based on the ArrayList of reviews
 	 */
@@ -55,12 +70,28 @@ public class Event {
 		reviews.add(review);
 	}
 
-	public Genre getGenre() {
+	//GETTERS AND SETTERS	
+	
+	public ArrayList<Genre> getGenre() {
 		return genre;
 	}
+	
+	public ArrayList<String> getStringGenre() {
+		ArrayList<String> temp = new ArrayList<String>();
+		for(int i = 0; i < genre.size(); i++) {
+			temp.add(genre.get(i).toString());
+		}
+		return temp;
+	}
 
-	public void setGenre(Genre genre) {
+	public void setGenre(ArrayList<Genre> genre) {
 		this.genre = genre;
+	}
+	
+	public void printGenre() {
+		for(int i = 0; i < genre.size(); i++) {
+			System.out.print(genre.get(i) + " ");
+		}
 	}
 
 	public Advisory getAdvisory() {
@@ -69,6 +100,22 @@ public class Event {
 
 	public void setAdvisery(Advisory advisory) {
 		this.advisory = advisory;
+	}
+	
+	public String getTitle() {
+		return title;
+	}
+
+	public void setActors(ArrayList<Actor> actors) {
+		this.actors = actors;
+	}
+	
+	public ArrayList<Actor> getActors() {
+		return actors;
+	}
+
+	public void setAdvisery(String title) {
+		this.title = title;
 	}
 
 	public double getRating() {

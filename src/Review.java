@@ -4,12 +4,21 @@ public class Review {
 	double rating;
 	String description;
 	
+	/** public Review(Event event, double rating, String description)
+	 * Creates new Review object associated with an event
+	 * @param event
+	 * @param rating
+	 * @param description
+	 */
 	public Review(Event event, double rating, String description) {
+		/* User can rate and comment on bought event */
 		this.event = event;
 		this.rating = rating;
 		this.description = description;
 	}
-
+	
+	//GETTERS AND SETTERS
+	
 	public double getRating() {
 		return rating;
 	}
