@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class MovieDriver {
 	static Scanner in = new Scanner(System.in);
-	static UserType curUser = UserType.GUEST;
+	static UserType curUser = UserType.Guest;
 	static ArrayList<Event> events;
 	static ArrayList<UserAccount> accounts;
 	
@@ -49,10 +49,10 @@ public class MovieDriver {
 		System.out.println("====================");
 		System.out.println(" 1. Explore movies");
 		System.out.println(" 2. Purchase a movie ticket");
-		if(curUser == UserType.GUEST) {
+		if(curUser == UserType.Guest) {
 		System.out.println(" 3. Log In");
 		System.out.println(" 4. Create an Account");
-		} else if (curUser == UserType.ADMIN){
+		} else if (curUser == UserType.Admin){
 		System.out.println(" 5. Account Options");
 		} 
 		System.out.println("-1. Quit program");

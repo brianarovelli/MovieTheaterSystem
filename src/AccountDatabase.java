@@ -1,11 +1,11 @@
-simport java.util.ArrayList;
+import java.util.ArrayList;
 
 public class AccountDatabase {
 	private static AccountDatabase accountDatabase = null;
 	private static ArrayList<UserAccount> accountList = new ArrayList<UserAccount>();
 	
 	private AccountDatabase() {
-		accountList = AccountLoader.loadAccounts();
+		accountList = AccountsLoader.loadAccounts();
 	}
 	
 	public static AccountDatabase getDatabase() {

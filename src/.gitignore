@@ -29,3 +29,8 @@
 /AccountDatabase.class
 /AccountLoader.class
 /AccountWriter.class
+/AccountsLoader.class
+/LoginTest.class
+/MovieConstants.class
+/MovieDatabase.class
+/MovieWriter.class

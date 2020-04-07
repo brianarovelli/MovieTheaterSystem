@@ -19,14 +19,14 @@ public class AccountsLoader extends AccountConstants {
 			ArrayList<UserAccount> accounts = new ArrayList<UserAccount>();
 			//Cycle through array of JSON Objects
 			for(int i = 0; i < accountJSON.size(); i++) {
-				JSONObject accountsJSON = (JSONObject)accountsJSON.get(i);
+				JSONObject accountsJSON = (JSONObject)accountJSON.get(i);
 				//Get parameters for accounts from JSON
-				String firstName = accountJSON.get(ACCOUNT_FIRST_NAME).toString();
 				String lastName = accountsJSON.get(ACCOUNT_LAST_NAME).toString();
+				String firstName = accountsJSON.get(ACCOUNT_FIRST_NAME).toString();
 				String userName = accountsJSON.get(ACCOUNT_USERNAME).toString();
 				String password = accountsJSON.get(ACCOUNT_PASSWORD).toString();
 				String email = accountsJSON.get(ACCOUNT_EMAIL).toString();
-				UserType type = UserType.valueOf(accountJSON.get(ACCOUNT_TYPE).toString());
+				UserType type = UserType.valueOf(accountsJSON.get(ACCOUNT_TYPE).toString());
 				accounts.add(new UserAccount(firstName,lastName,userName,password,email,type));
 			}
 			return accounts;

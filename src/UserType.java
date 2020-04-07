@@ -1,5 +1,5 @@
 public enum UserType {
-    GUEST("Guest"), DISABLED("Disabled"), TEACHER("Teacher"), STUDENT("Student"), EMPLOYEE("Employee"), MILITARY("Military"), ADMIN("Admin");
+	Guest("Guest"), Disabled("Disabled"), Teacher("Teacher"), Student("Student"), Employee("Employee"), Military("Military"), Admin("Admin");
     //Different categories the user can choose when ordering a ticket
  public final String type;
     
