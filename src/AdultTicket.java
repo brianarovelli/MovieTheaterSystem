@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class AdultTicket extends TicketDecorator{
 
 	private final static double ADULT_TICKET_COST = 13.00;
+	private final static int ADULT_TICKET_POINTS = 5;
 	private Ticket ticket;
 	
 	/** public AdultTicket (Ticket ticket)
@@ -38,6 +39,12 @@ public class AdultTicket extends TicketDecorator{
 	}
 	public void setSeat(ArrayList<Seat>  seat) {
 		this.ticket.setSeat(seat);
+	
+	/** public int getPoints()
+	 * Adds points of added item onto order
+	 */
+	public int getPoints() {
+		return ticket.getPoints() + ADULT_TICKET_POINTS;
 	}
 
 }

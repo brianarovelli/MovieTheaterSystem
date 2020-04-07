@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class SeniorTicket extends TicketDecorator {
 	private final static double SENIOR_TICKET_COST = 12.00;
+	private final static int SENIOR_TICKET_POINTS = 5;
 	
 	private Ticket ticket;
 	
@@ -38,5 +39,10 @@ public class SeniorTicket extends TicketDecorator {
 	}
 	public void setSeat(ArrayList<Seat>  seat) {
 		this.ticket.setSeat(seat);
+	/** public int getPoints()
+	 * Adds points of added item onto order
+	 */
+	public int getPoints() {
+		return ticket.getPoints() + SENIOR_TICKET_POINTS;
 	}
 }

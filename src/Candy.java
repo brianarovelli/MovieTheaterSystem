@@ -1,6 +1,7 @@
 
 public class Candy extends TicketDecorator {
 	private static final double CANDY_COST = 3.25;
+	private static final int CANDY_POINTS = 1;
 	
 	Ticket ticket;
 	
@@ -24,5 +25,12 @@ public class Candy extends TicketDecorator {
 	 */
 	public double getCost() {
 		return ticket.getCost() + CANDY_COST;
+	}
+	
+	/** public int getPoints()
+	 * Adds points of added item onto order
+	 */
+	public int getPoints() {
+		return ticket.getPoints() + CANDY_POINTS;
 	}
 }

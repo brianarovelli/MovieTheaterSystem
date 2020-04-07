@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 public abstract class Ticket {	
+	protected Movie movie;
 	protected String description;
 	protected ArrayList<Seat> seat;
 	protected Venue venue;
@@ -21,4 +22,6 @@ public abstract class Ticket {
 		this.venue = venue;
 	}
 	public abstract double getCost();
+	
+	public abstract int getPoints();
 }
