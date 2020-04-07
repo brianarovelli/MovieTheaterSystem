@@ -21,8 +21,8 @@ public class AccountLoader extends AccountConstants {
 				String username = accountJSON.get(ACCOUNT_USERNAME).toString();
 				String password = accountJSON.get(ACCOUNT_PASSWORD).toString();
 				String email = accountJSON.get(ACCOUNT_EMAIL).toString();
-				
-				accounts.add(new UserAccount(firstName, lastName, username, password, email));
+				UserType type = UserType.valueOf(accountJSON.get(ACCOUNT_TYPE).toString());
+				accounts.add(new UserAccount(firstName, lastName, username, password, email, type));
 			}
 			
 			return accounts;

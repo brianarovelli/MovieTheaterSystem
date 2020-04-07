@@ -34,7 +34,7 @@ public class AccountWriter extends AccountConstants {
 		accountDetails.put(ACCOUNT_USERNAME, account.getUsername());
 		accountDetails.put(ACCOUNT_PASSWORD, account.getPassword());
 		accountDetails.put(ACCOUNT_EMAIL, account.getEmail());
-		
+		accountDetails.put(ACCOUNT_TYPE, account.getType());
 		return accountDetails;
 	}
 }

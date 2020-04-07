@@ -6,6 +6,7 @@ public abstract class Account {
 	protected String username;
 	protected String password;
 	protected String email;
+	protected UserType type;
 	
 	public Account() {
 		this.firstName = null;
@@ -13,13 +14,15 @@ public abstract class Account {
 		this.username = null;
 		this.password = null;
 		this.firstName = null;
+		this.type = null;
 	}
-	public Account(String firstName, String lastName, String username, String password, String email) {
+	public Account(String firstName, String lastName, String username, String password, String email, UserType type) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.username = username;
 		this.password = password;
 		this.email = email;
+		this.type = type;
 	}
 
 	public String getFirstName() {
@@ -52,6 +55,13 @@ public abstract class Account {
 	
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public UserType getType() {
+		return type;
+	}
+	
+	public void setType(UserType type) {
+		this.type = type;
 	}
 	
 	public void printPassword() {

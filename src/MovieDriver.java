@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Scanner;
 /**
@@ -11,9 +12,11 @@ import java.util.Scanner;
  */
 public class MovieDriver {
 	static Scanner in = new Scanner(System.in);
+	static UserType curUser = UserType.Guest;
+	static ArrayList<Event> events;
 	public static void main(String[] args) {
 		boolean repeat = true;
-		ArrayList<Event> events = init();
+		events = init();
 		while(repeat) {
 			printMenu();
 			try {
@@ -32,9 +35,12 @@ public class MovieDriver {
 		System.out.println("====================");
 		System.out.println(" 1. Explore movies");
 		System.out.println(" 2. Purchase a movie ticket");
+		if(curUser == UserType.Guest) {
 		System.out.println(" 3. Log In");
 		System.out.println(" 4. Create an Account");
+		} else if (curUser == UserType.Admin){
 		System.out.println(" 5. Account Options");
+		} 
 		System.out.println("-1. Quit program");
 		System.out.println("====================");
 	}
@@ -59,8 +65,7 @@ public class MovieDriver {
 		case 4:
 			return createAccountMenu();
 		case 5:
-			/*TODO This is where the employees can enter new events, or users can make reviews maybe?*/
-			return true;
+			return accountOptions();
 		default:
 			return true;
 		}
@@ -295,6 +300,7 @@ public class MovieDriver {
 	
 	private static boolean loginMenu() {
 		/* TODO Here's where the user can log in. We need it for scenario 3 for employees to enter an event in*/
+		// curUser = UserType.(blank)	Fill this in to update the global variable
 		return true;
 	}
 
@@ -321,7 +327,10 @@ public class MovieDriver {
 		System.out.println("Please enter your email:");
 		String email = in.next();
 		
-		database.addUserAccount(firstName, lastName, username, password, email);
+		System.out.println("Please enter account type:");
+		UserType type = UserType.valueOf(in.next()); 
+		
+		database.addUserAccount(firstName, lastName, username, password, email, type);
 		
 		/*REMOVE THIS PART LATER.... JUST FOR TESTING*/
 		showAccountDatabase();
@@ -338,6 +347,132 @@ public class MovieDriver {
 		for(UserAccount account: accounts) {
 			account.printInfomation();
 		}
+	}
+	
+	private static boolean accountOptions() {
+		boolean rep = true;
+		while(rep) {
+			System.out.println("====================");
+			System.out.println("1. Add event");
+			System.out.println("2. Remove event");
+			System.out.println("-1. Back to Main");
+			System.out.println("====================");
+			try {
+			rep = accSwitch(in.nextInt());
+			} catch(Exception e) {
+				in.next();
+			}
+		}
+		return true;
+	}
+	
+	private static boolean accSwitch(int choice) {
+		switch(choice) {
+		case -1:
+			return false;
+		case 1:
+			addMovie();
+			return false;
+		case 2:
+			removeMovie();
+			return false;
+		default:
+			return true;
+		}
+	}
+	
+	private static void removeMovie() {
+		System.out.println("Please enter event name:");
+		String eventName = in.next();
+		int index = -1;
+		for(Event e : events) {
+			if(e.getTitle().equals(eventName)) {
+				index = events.indexOf(e);
+			}
+		}
+		if(index == -1) {
+			System.out.println("Error, event not found");
+			return;
+		}
+		events.remove(index);
+		System.out.println("Successfully removed " + eventName);
+	}
+	private static void addMovie() {
+		System.out.println("Please enter event name:");
+		String eventName = in.next();
+		
+		System.out.println("Please enter any actors, when finished enter -1:");
+		boolean rep = true;
+		ArrayList<Actor> actors = new ArrayList<Actor>();
+		while(rep) {
+			try {
+				if(in.hasNextInt()) {
+					if(in.nextInt() == -1) {
+						rep = false;
+						continue;
+					}
+				}
+				String[] actor = in.next().split(" ");
+				actors.add(new Actor(actor[0], actor[1]));
+			} catch(Exception e) {
+				in.next();
+			}
+		}
+		System.out.println("Please enter any genres, when finished enter -1:");
+		rep = true;
+		ArrayList<Genre> genres = new ArrayList<Genre>();
+		while(rep) {
+			try {
+				if(in.hasNextInt()) {
+					if(in.nextInt() == -1) {
+						rep = false;
+						continue;
+					}
+				}
+				genres.add(Genre.valueOf(in.next()));
+			} catch(Exception e) {
+				System.out.println("Invalid entry");
+				in.next();
+			}
+		}
+		
+		System.out.println("Please enter event advisory:");
+		Advisory ad = null;
+		rep = true;
+		while(rep) {
+			try {
+				ad = Advisory.valueOf(in.next());
+				rep = false;
+			} catch(Exception e) {
+				System.out.println("Invalid entry");
+				in.next();
+			}
+		}
+		
+		System.out.println("Please enter event type:");
+		rep = true;
+		EventType eType = null;
+		while(rep) {
+			try {
+				eType = EventType.valueOf(in.next());
+				rep = false;
+			} catch(Exception e) {
+				System.out.println("Invalid entry");
+				in.next();
+			}
+		}
+		
+		System.out.println("Please enter event point value:");
+		int points = in.nextInt();
+		
+		System.out.println("Please enter event price:");
+		double price = in.nextDouble();
+		
+		System.out.println("Please enter hour of event showtime:");
+		int t = in.nextInt();
+		Time time = new Time(t, 0, 0);
+		
+		events.add(new Event(eType, eventName, actors, genres, ad, price, points, time));
 	}
 }
 
