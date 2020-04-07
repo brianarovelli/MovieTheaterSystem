@@ -6,17 +6,8 @@ Ticket includes:
 1 Adult Ticket
 1 Adult Ticket
 1 Adult Ticket
-1 Child Ticket
-1 Child Ticket
-1 Child Ticket
-1 Child Ticket
-1 Senior Ticket
-1 Popcorn
-1 Popcorn
-1 Soda
-1 Candy
-1 Popcorn
+1 Adult Ticket
 
 TOTAL COST
-125.14999999999998
+52.0
 ====================
