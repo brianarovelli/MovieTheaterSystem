@@ -7,9 +7,19 @@ public abstract class Account {
 	protected String password;
 	protected String email;
 	
-	public Account(String username, String password) {
+	public Account() {
+		this.firstName = null;
+		this.lastName = null;
+		this.username = null;
+		this.password = null;
+		this.firstName = null;
+	}
+	public Account(String firstName, String lastName, String username, String password, String email) {
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.username = username;
 		this.password = password;
+		this.email = email;
 	}
 
 	public String getFirstName() {
@@ -40,6 +50,19 @@ public abstract class Account {
 		return password;
 	}
 	
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	public void printPassword() {
+		int length = this.password.length();
+		System.out.print("Password: ");
+		for(int i = 0; i < length; i++) {
+			System.out.print("*");
+		}
+		System.out.println();
+	}
+	
 	public void changePassword() {
 		Scanner in = new Scanner(System.in);
 		System.out.println("PLEASE ENTER OLD PASSWORD");
@@ -59,6 +82,18 @@ public abstract class Account {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public void printInfomation() {
+		System.out.println("\nACCOUNT DETAILS");
+		System.out.println("====================");
+		System.out.println("First name: " + this.firstName);
+		System.out.println("Last name: " + this.lastName);
+		System.out.println("username: " + this.username);
+		printPassword();
+		System.out.println("Email: " + this.email);
+		System.out.println("====================");
+		System.out.println("Please log in once returning to main menu");
+		
 	}
 	
 }

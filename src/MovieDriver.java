@@ -32,7 +32,8 @@ public class MovieDriver {
 		System.out.println(" 1. Explore movies");
 		System.out.println(" 2. Purchase a movie ticket");
 		System.out.println(" 3. Log In");
-		System.out.println(" 4. Account Options");
+		System.out.println(" 4. Create an Account");
+		System.out.println(" 5. Account Options");
 		System.out.println("-1. Quit program");
 		System.out.println("====================");
 	}
@@ -55,6 +56,8 @@ public class MovieDriver {
 		case 3:
 			return loginMenu();
 		case 4:
+			return createAccountMenu();
+		case 5:
 			/*TODO This is where the employees can enter new events, or users can make reviews maybe?*/
 			return true;
 		default:
@@ -181,7 +184,6 @@ public class MovieDriver {
 		return ticket;
 	}
 	
-	
 	private static void printFoodMenu() {
 		System.out.println("\nPlease select from the following list!");
 		System.out.println("====================");
@@ -230,6 +232,30 @@ public class MovieDriver {
 	
 	private static boolean loginMenu() {
 		/* TODO Here's where the user can log in. We need it for scenario 3 for employees to enter an event in*/
+		return true;
+	}
+	
+	private static boolean createAccountMenu() {
+		Account newaccount = new UserAccount();
+		
+		System.out.println("Please enter your first name:");
+		newaccount.setFirstName(in.next());
+		
+		System.out.println("Please enter your last name:");
+		newaccount.setLastName(in.next());
+		
+		System.out.println("Please enter your username:");
+		newaccount.setUsername(in.next());
+		
+		/*TODO MAKE THIS TYPE IN **********/
+		System.out.println("Please enter your password:");
+		newaccount.setPassword(in.next());
+		
+		System.out.println("Please enter your email:");
+		newaccount.setEmail(in.next());
+		
+		newaccount.printInfomation();
+		System.out.println("\nNow returning to Main Menu...");
 		return true;
 	}
 }
