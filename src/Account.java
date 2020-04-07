@@ -13,7 +13,6 @@ public abstract class Account {
 		this.lastName = null;
 		this.username = null;
 		this.password = null;
-		this.firstName = null;
 		this.type = null;
 	}
 	
@@ -96,7 +95,7 @@ public abstract class Account {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public void printInfomation() {
+	public void printInformation() {
 		/* Shows existing users their account information */
 		System.out.println("ACCOUNT DETAILS");
 		System.out.println("====================");
@@ -107,7 +106,7 @@ public abstract class Account {
 		System.out.println("Email: " + this.email);
 		System.out.println("User Type: " + this.type);
 		System.out.println("====================");
-		System.out.println("Please log in once returning to main menu");
+	 // System.out.println("Please log in once returning to main menu");
 		
 	}
 	

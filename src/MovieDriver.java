@@ -12,12 +12,14 @@ import java.util.Scanner;
  */
 public class MovieDriver {
 	static Scanner in = new Scanner(System.in);
-	static UserType curUser = UserType.Guest;
+	static UserType curUser = UserType.GUEST;
 	static ArrayList<Event> events;
+	static ArrayList<UserAccount> accounts;
 	
 	public static void main(String[] args) {
 		boolean repeat = true;
-		events = init();
+		events = initEvents();
+		accounts = initAccounts();
 		while(repeat) {
 			printMenu();
 			try {
@@ -31,11 +33,15 @@ public class MovieDriver {
 	 * Initialize the events from output.json
 	 * @return
 	 */
-	private static ArrayList<Event> init(){
+	private static ArrayList<Event> initEvents() {
 		MovieLoader init = new MovieLoader();
 		return init.loadEvents();
 	}
 	
+	private static ArrayList<UserAccount> initAccounts() {
+		AccountsLoader init = new AccountsLoader();
+		return init.loadAccounts();
+	}
 	/** private static void printMenu()
 	 * Initial menu where user can input number in correspondence with where they want to go
 	 */
@@ -43,10 +49,10 @@ public class MovieDriver {
 		System.out.println("====================");
 		System.out.println(" 1. Explore movies");
 		System.out.println(" 2. Purchase a movie ticket");
-		if(curUser == UserType.Guest) {
+		if(curUser == UserType.GUEST) {
 		System.out.println(" 3. Log In");
 		System.out.println(" 4. Create an Account");
-		} else if (curUser == UserType.Admin){
+		} else if (curUser == UserType.ADMIN){
 		System.out.println(" 5. Account Options");
 		} 
 		System.out.println("-1. Quit program");
@@ -67,7 +73,7 @@ public class MovieDriver {
 			System.out.println("\t Description: " + events.get(i).getDescription());
 		}
 	}
-	
+
 	/** private static boolean process(int choice, ArrayList<Event> events)
 	 * Initial menu directors from printMenu()
 	 * @param choice - number choice from printMenu()
@@ -368,11 +374,64 @@ public class MovieDriver {
 	 * @return
 	 */
 	private static boolean loginMenu() {
-		/* TODO Here's where the user can log in. We need it for scenario 3 for employees to enter an event in*/
-		// curUser = UserType.(blank)	Fill this in to update the global variable
+
+		Scanner in = new Scanner(System.in);
+		System.out.println("====================");
+		System.out.println("Enter username");
+		String username = in.nextLine();
+		
+		while(!userExists(username)) {
+			System.out.println("No account found associated with username entered. Please enter a different username.");
+			username = in.nextLine();
+			if (userExists(username)) 
+				break;
+			continue;
+			}
+		
+		System.out.println("Enter password associated with username : " + username);
+		String password = in.nextLine();
+		while (!correctPassword(username, password)) {
+			System.out.println("Incorrect password. Please enter a different password. You must've mispelled it or something - I know your exist :) ");
+			password = in.nextLine();
+			if (correctPassword(username, password)) 
+				break;
+			continue;
+		}
+		/* will set current user to the returned value
+		 * method also prints info of this user to prevent necessity to enter for loop again or construct Array object within this method just to print temporarily useful information
+	     */
+	    curUser = accountType(username, password);
+		System.out.println("====================");
 		return true;
 	}
 
+	private static boolean userExists(String userName) {
+		for (Account i : accounts) {
+			if (i.getUsername().equals(userName))
+				return true;
+		}
+		return false;
+	}
+	private static boolean correctPassword(String username, String password) {
+		for (Account i : accounts) {
+			if (i.getUsername().equalsIgnoreCase(username)) {
+				if (i.getPassword().equalsIgnoreCase(password)) 
+					return true;
+				return false;
+			}
+		}
+		return false;
+	}
+	private static UserType accountType (String username, String password) {
+		for (Account i : accounts) {
+			if (i.getUsername().equalsIgnoreCase(username) 
+					&& i.getPassword().equalsIgnoreCase(password)) {
+				i.printInformation();
+				return i.getType();
+			}
+		}
+		return null;
+	}
 	/** private static boolean createAccountMenu()
 	 *  Inputs information for account creation
 	 * @return boolean to continue through main menu
@@ -417,7 +476,7 @@ public class MovieDriver {
 		ArrayList<UserAccount> accounts = database.getAccounts();
 		
 		for(UserAccount account: accounts) {
-			account.printInfomation();
+			account.printInformation();
 		}
 	}
 	
