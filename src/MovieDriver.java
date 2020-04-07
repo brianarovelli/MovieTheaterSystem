@@ -14,6 +14,7 @@ public class MovieDriver {
 	static Scanner in = new Scanner(System.in);
 	static UserType curUser = UserType.Guest;
 	static ArrayList<Event> events;
+	
 	public static void main(String[] args) {
 		boolean repeat = true;
 		events = init();
@@ -26,11 +27,18 @@ public class MovieDriver {
 		in.close();
 	}
 	
+	/** private static ArrayList<Event> init()
+	 * Initialize the events from output.json
+	 * @return
+	 */
 	private static ArrayList<Event> init(){
 		MovieLoader init = new MovieLoader();
 		return init.Load("src/output.json");
 	}
-	/* Initial menu where user can input number in correspondence with where they want to go */
+	
+	/** private static void printMenu()
+	 * Initial menu where user can input number in correspondence with where they want to go
+	 */
 	private static void printMenu() {
 		System.out.println("====================");
 		System.out.println(" 1. Explore movies");
@@ -45,12 +53,27 @@ public class MovieDriver {
 		System.out.println("====================");
 	}
 	
+	/** private static void printEvents(ArrayList<Event> events)
+	 * Prints events
+	 * @param events
+	 */
 	private static void printEvents(ArrayList<Event> events) {
 		for(int i = 0; i < events.size(); i++) {
 			System.out.println(i + ": " + events.get(i).getTitle());
+			System.out.println("\t Advisory: " + events.get(i).getAdvisory());
+			System.out.print("\t Genre(s): ");
+			events.get(i).printGenre();
+			System.out.println("\n\t Rating: " + events.get(i).getRating());
+			System.out.println("\t Description: " + events.get(i).getDescription());
 		}
 	}
 	
+	/** private static boolean process(int choice, ArrayList<Event> events)
+	 * Initial menu directors from printMenu()
+	 * @param choice - number choice from printMenu()
+	 * @param events - list of all events
+	 * @return
+	 */
 	private static boolean process(int choice, ArrayList<Event> events) {
 		switch(choice) {
 		case -1:
@@ -70,7 +93,24 @@ public class MovieDriver {
 			return true;
 		}
 	}
-	/* Menu where user can purchase ticket */
+
+	/** private static boolean confirm()
+	 * Confirms prior choice of user
+	 * @return choice
+	 */
+	private static boolean confirm() {
+		System.out.println("Please enter 'Y' for yes or 'N' for no");
+		String confirm = in.next();
+		if(confirm.equals("N"))
+			return false;
+		return true;
+	}
+	
+	/** private static boolean ticketPurchaseMenu(ArrayList<Event> events)
+	 * Menu option 2 where user can purchase ticket
+	 * @param events - list of all events
+	 * @return
+	 */
 	private static boolean ticketPurchaseMenu(ArrayList<Event> events) {
 		/* Menu to choose which movie you would like to see */
 		System.out.println(" Please input the number corresponding to your movie choice");
@@ -80,6 +120,11 @@ public class MovieDriver {
 		return true;
 	}
 	
+	/** private static void purchaseTicket(int choice, ArrayList<Event> events)
+	 * User purchases a ticket
+	 * @param choice - movie number choice
+	 * @param events
+	 */
 	private static void purchaseTicket(int choice, ArrayList<Event> events) {
 		/* Confirm movie choice */
 		System.out.println("\nYou have selected the event: " + events.get(choice).getTitle() + "! Is this correct?");
@@ -89,10 +134,6 @@ public class MovieDriver {
 		/* Number of tickets */
 		System.out.println("\n******* PLEASE INPUT THE NUMBER OF TICKETS YOU WOULD LIKE TO PURCHASE *******");
 		Ticket ticket = numberofTickets();
-		
-		
-		//TODO We need to let the user pick seating location for scenario 2
-		
 		
 		/* Adding food onto ticket */
 		System.out.println("\nWould you like to add food and/or drink onto your ticket order?");
@@ -105,18 +146,6 @@ public class MovieDriver {
 			checkout(ticket);
 		/* Finish Movie ticket order*/
 		System.out.println("\nNow returning to Main Menu...");
-	}
-	
-	/** private static boolean confirm()
-	 * Confirms prior choice of user
-	 * @return choice
-	 */
-	private static boolean confirm() {
-		System.out.println("Please enter 'Y' for yes or 'N' for no");
-		String confirm = in.next();
-		if(confirm.equals("N"))
-			return false;
-		return true;
 	}
 	
 	/** private static Ticket numberofTickets()
@@ -145,15 +174,103 @@ public class MovieDriver {
 		}
 		/* Algorithm for total # of tickets purchased */
 		int totaltickets = adulttickets + childtickets + seniortickets;
+		
+		/* User selects seats for their tickets */
 		chooseSeats(ticket, totaltickets);
 		printCurrentTicket(ticket);
-		System.out.println("You have entered: " + totaltickets);
+		System.out.println("You have entered: " + totaltickets + " tickets");
 		
 		return ticket;
 	}
 	
+	/** private static void chooseSeats(Ticket ticket, int totaltickets)
+	 * Choose seats for ticket(s) 
+	 * @param ticket - Ticket order
+	 * @param totaltickets - total number of tickets
+	 */
+	private static void chooseSeats(Ticket ticket, int totaltickets) {
+		/* For some reason the venue wouldn't work without being set here. If you can fix, please try */
+		Seat[][] seats = new Seat[5][5];
+		for(int i = 0; i < 5; i++) {
+			for(int j = 0; j < 5; j++) {
+				seats[i][j] = new Seat(new int[2], SeatType.Reclining);
+			}
+		}
+		ticket.venue = new Venue("Default", 0, 5, 5, seats, new ArrayList<Review>());
+		for(int k = 0; k < totaltickets; k++) {
+			/* Print grid of the seating chart */
+			for(int i = 0; i < ticket.venue.getSeats().length; i++) {
+				System.out.print(i);
+				for(int j = 0; j < ticket.venue.getSeats()[i].length; j++) {
+					System.out.print("----");
+				}
+				System.out.println();
+				for(int j = 0; j < ticket.venue.getSeats()[i].length; j++) {
+					if(ticket.venue.getSeats()[i][j].taken)
+						System.out.print("| X ");
+					else
+						System.out.print("| " + j + " ");
+				}
+				System.out.println("|");
+				for(int j = 0; j < ticket.venue.getSeats()[i].length; j++) {
+					System.out.print("-----");
+				}
+				System.out.println();
+			}
+			boolean rep = true;
+			while(rep) {
+				
+				/* User inputs row */
+				System.out.println("\nPlease select your row");
+				int[] spot = new int[2];
+				try {
+					spot[0] = in.nextInt();
+				} catch(Exception e) {
+					in.next();
+				}
+				
+				/* User inputs column */
+				System.out.println("\nPlease select your column");
+				try {
+					spot[1] = in.nextInt();
+				} catch(Exception e) {
+					in.next();
+				}
+				
+				/* Seat is taken */
+				if(ticket.venue.getSeats()[spot[0]][spot[1]].taken) {
+					System.out.println("\nThat seat is taken! Please try again!");
+				} 
+				else { /* Seat is not taken, User takes that spot and seat is added to Ticket */
+					rep = false;
+					ticket.venue.getSeats()[spot[0]][spot[1]].taken = true;
+					ticket.getSeat().add(new Seat(spot, SeatType.Reclining));
+				}
+			}
+		}
+	}
+	
+	
+	/** private static void printFoodMenu()
+	 * Menu to order ticket add-ons such as food and drinks
+	 */
+	private static void printFoodMenu() {
+		System.out.println("\nPlease select from the following list!");
+		System.out.println("====================");
+		System.out.println(" 1. Popcorn");
+		System.out.println(" 2. Soda");
+		System.out.println(" 3. Candy");
+		System.out.println(" 4. Beer");
+		System.out.println("-1. Quit food ordering");
+		System.out.println("====================");
+	}
+	
+	/** private static Ticket addonPurchaseMenu(Ticket ticket)
+	 * User can add food and/or drinks to their ticket based on printFoodMenu()
+	 * @param ticket - Ticket order
+	 * @return - Ticket order
+	 */
 	private static Ticket addonPurchaseMenu(Ticket ticket) {
-		//TODO Here's where the user can add food and/or drinks to their order
 		boolean repeat = true;
 		int choice;
 		while(repeat) {
@@ -192,89 +309,37 @@ public class MovieDriver {
 		}
 		return ticket;
 	}
-	/* Menu to order ticket add-ons such as food and drinks */
-	private static void printFoodMenu() {
-		System.out.println("\nPlease select from the following list!");
-		System.out.println("====================");
-		System.out.println(" 1. Popcorn");
-		System.out.println(" 2. Soda");
-		System.out.println(" 3. Candy");
-		System.out.println(" 4. Beer");
-		System.out.println("-1. Quit food ordering");
-		System.out.println("====================");
-	}
-	/* Prompts user the total $ amount */
+	
+	/** private static void printCurrentTicket(Ticket ticket)
+	 * Prompts user the list of items on ticket, total $ amount, and points they can receive if signed in
+	 * @param ticket
+	 */
 	private static void printCurrentTicket(Ticket ticket) {
 		System.out.println(ticket.getDescription());
 		System.out.println("This totals to a price of $" + ticket.getCost());
 		System.out.println("If you are signed into an account, you will gain " + ticket.getPoints() + " points from this purchase!");
 	}
 	
+	/** private static void checkout(Ticket ticket)
+	 * User payment checkout for their ticket order
+	 * @param ticket - Ticket order
+	 */
 	private static void checkout(Ticket ticket) {
 		/*Payment Information*/
 		System.out.println("\nPlease enter anything and we will pretend it is payment information");
 		in.next();
 		System.out.println("Wonderful! That looks real. Thank you for your purchase.");
+		
 		/*Print tickets*/
 		System.out.println("Would you like to print your tickets?");
 		if(confirm())
 			printTickets(ticket);
 	}
-	/* Choose seats for ticket(s) */
-	private static void chooseSeats(Ticket ticket, int totaltickets) {
-		/* For some reason the venue wouldn't work without being set here. If you can fix, please try */
-		Seat[][] seats = new Seat[5][5];
-		for(int i = 0; i < 5; i++) {
-			for(int j = 0; j < 5; j++) {
-				seats[i][j] = new Seat(new int[2], SeatType.Reclining);
-			}
-		}
-		ticket.venue = new Venue("Default", 0, 5, 5, seats, new ArrayList<Review>());
-		for(int k = 0; k < totaltickets; k++) {
-			for(int i = 0; i < ticket.venue.getSeats().length; i++) {
-				System.out.print(i);
-				for(int j = 0; j < ticket.venue.getSeats()[i].length; j++) {
-					System.out.print("----");
-				}
-				System.out.println();
-				for(int j = 0; j < ticket.venue.getSeats()[i].length; j++) {
-					if(ticket.venue.getSeats()[i][j].taken)
-						System.out.print("| X ");
-					else
-						System.out.print("| " + j + " ");
-				}
-				System.out.println("|");
-				for(int j = 0; j < ticket.venue.getSeats()[i].length; j++) {
-					System.out.print("-----");
-				}
-				System.out.println();
-			}
-			boolean rep = true;
-			while(rep) {
-				System.out.println("\nPlease select your row");
-				int[] spot = new int[2];
-				try {
-					spot[0] = in.nextInt();
-				} catch(Exception e) {
-					in.next();
-				}
-				System.out.println("\nPlease select your column");
-				try {
-					spot[1] = in.nextInt();
-				} catch(Exception e) {
-					in.next();
-				}
-				if(ticket.venue.getSeats()[spot[0]][spot[1]].taken) {
-					System.out.println("\nThat seat is taken! Please try again!");
-				} else {
-					rep = false;
-					ticket.venue.getSeats()[spot[0]][spot[1]].taken = true;
-					ticket.getSeat().add(new Seat(spot, SeatType.Reclining));
-				}
-			}
-		}
-	}
-	/* Prints ticket information to a separate txt file */
+	
+	/** private static void printTickets(Ticket ticket)
+	 * Prints ticket information to a separate txt file, printedtickets.txt
+	 * @param ticket - Ticket order
+	 */
 	private static void printTickets(Ticket ticket) {
 		File file = new File("src/printedtickets.txt");
 		PrintWriter writer;
@@ -297,6 +362,8 @@ public class MovieDriver {
 			e.printStackTrace();
 		}
 	}
+	
+	
 	
 	private static boolean loginMenu() {
 		/* TODO Here's where the user can log in. We need it for scenario 3 for employees to enter an event in*/
@@ -401,6 +468,9 @@ public class MovieDriver {
 		System.out.println("Please enter event name:");
 		String eventName = in.next();
 		
+		System.out.println("Please enter event description:");
+		String eventDescription = in.next();
+		
 		System.out.println("Please enter any actors, when finished enter -1:");
 		boolean rep = true;
 		ArrayList<Actor> actors = new ArrayList<Actor>();
@@ -472,7 +542,7 @@ public class MovieDriver {
 		int t = in.nextInt();
 		Time time = new Time(t, 0, 0);
 		
-		events.add(new Event(eType, eventName, actors, genres, ad, price, points, time));
+		events.add(new Event(eType, eventName, eventDescription, actors, genres, ad, price, points, time));
 	}
 }
 

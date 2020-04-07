@@ -40,7 +40,7 @@ public class MovieLoader{
 				}
 				Advisory ad = Advisory.valueOf(movieJSON.get("advisory").toString().toUpperCase());
 				//Add new movie to movie ArrayList
-				movies.add(new Event(EventType.MOVIE, n, a, g, ad, 0, 0, null));
+				movies.add(new Event(EventType.MOVIE, n, d, a, g, ad, 0, 0, null));
 			}
 			return movies;
 		} catch(Exception e) {
