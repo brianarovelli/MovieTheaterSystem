@@ -300,28 +300,46 @@ public class MovieDriver {
 
 	private static boolean createAccountMenu() {
 		/* Menu to create a new account for users */
-		Account newaccount = new UserAccount();
+		AccountDatabase database = AccountDatabase.getDatabase();
+		
+		/*REMOVE THIS PART LATER.... JUST FOR TESTING*/
+		System.out.println("Printing current accounts");
+		showAccountDatabase();
 		
 		System.out.println("Please enter your first name:");
-		newaccount.setFirstName(in.next());
+		String firstName = in.next();
 		
 		System.out.println("Please enter your last name:");
-		newaccount.setLastName(in.next());
+		String lastName = in.next();
 		
 		System.out.println("Please enter your username:");
-		newaccount.setUsername(in.next());
+		String username = in.next();
 		
-		/*TODO MAKE THIS TYPE IN **********/
 		System.out.println("Please enter your password:");
-		newaccount.setPassword(in.next());
+		String password = in.next();
 		
 		System.out.println("Please enter your email:");
-		newaccount.setEmail(in.next());
+		String email = in.next();
 		
-		newaccount.printInfomation();
+		database.addUserAccount(firstName, lastName, username, password, email);
+		
+		/*REMOVE THIS PART LATER.... JUST FOR TESTING*/
+		showAccountDatabase();
+		
 		System.out.println("\nNow returning to Main Menu...");
 		return true;
 	}
+	
+	
+	private static void showAccountDatabase() {
+		AccountDatabase database = AccountDatabase.getDatabase();
+		ArrayList<UserAccount> accounts = database.getAccounts();
+		
+		for(UserAccount account: accounts) {
+			account.printInfomation();
+		}
+	}
 }
+
 
 
