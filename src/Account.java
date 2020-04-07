@@ -16,6 +16,7 @@ public abstract class Account {
 		this.firstName = null;
 		this.type = null;
 	}
+	
 	public Account(String firstName, String lastName, String username, String password, String email, UserType type) {
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -104,6 +105,7 @@ public abstract class Account {
 		System.out.println("username: " + this.username);
 		printPassword();
 		System.out.println("Email: " + this.email);
+		System.out.println("User Type: " + this.type);
 		System.out.println("====================");
 		System.out.println("Please log in once returning to main menu");
 		
