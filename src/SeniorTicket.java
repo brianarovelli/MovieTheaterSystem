@@ -39,6 +39,7 @@ public class SeniorTicket extends TicketDecorator {
 	}
 	public void setSeat(ArrayList<Seat>  seat) {
 		this.ticket.setSeat(seat);
+	}
 	/** public int getPoints()
 	 * Adds points of added item onto order
 	 */
