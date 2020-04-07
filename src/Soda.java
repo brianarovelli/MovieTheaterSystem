@@ -1,6 +1,7 @@
 
 public class Soda extends TicketDecorator {
 	private final double SODA_COST = 4.35;
+	private final int SODA_POINTS = 1;
 	
 	Ticket ticket;
 	
@@ -24,5 +25,12 @@ public class Soda extends TicketDecorator {
 	 */
 	public double getCost() {
 		return ticket.getCost() + SODA_COST;
+	}
+	
+	/** public int getPoints()
+	 * Adds points of added item onto order
+	 */
+	public int getPoints() {
+		return ticket.getPoints() + SODA_POINTS;
 	}
 }

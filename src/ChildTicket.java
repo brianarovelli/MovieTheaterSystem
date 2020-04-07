@@ -1,6 +1,7 @@
 
 public class ChildTicket extends TicketDecorator {
 	private final static double CHILD_TICKET_COST = 10.00;
+	private final static int CHILD_TICKET_POINTS = 5;
 	
 	private Ticket ticket;
 	
@@ -25,5 +26,12 @@ public class ChildTicket extends TicketDecorator {
 	 */
 	public double getCost() {
 		return ticket.getCost() + CHILD_TICKET_COST;
+	}
+	
+	/** public int getPoints()
+	 * Adds points of added item onto order
+	 */
+	public int getPoints() {
+		return ticket.getPoints() + CHILD_TICKET_POINTS;
 	}
 }

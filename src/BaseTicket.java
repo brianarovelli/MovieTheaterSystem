@@ -8,4 +8,8 @@ public class BaseTicket extends Ticket{
 		/* Creates ticket with no entry, must be bought to gain entry */
 		return 0.0;
 	}
+	
+	public int getPoints() {
+		return 0;
+	}
 }

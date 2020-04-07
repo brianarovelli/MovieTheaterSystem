@@ -201,6 +201,7 @@ public class MovieDriver {
 	private static void printCurrentTicket(Ticket ticket) {
 		System.out.println(ticket.getDescription());
 		System.out.println("This totals to a price of $" + ticket.getCost());
+		System.out.println("If you are signed into an account, you will gain " + ticket.getPoints() + " points from this purchase!");
 	}
 	
 	private static void checkout(Ticket ticket) {
