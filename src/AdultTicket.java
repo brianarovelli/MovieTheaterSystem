@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class AdultTicket extends TicketDecorator{
 
@@ -25,6 +26,18 @@ public class AdultTicket extends TicketDecorator{
 	 */
 	public double getCost() {
 		return ticket.getCost() + ADULT_TICKET_COST;
+	}
+	public Venue getVenue() {
+		return ticket.getVenue();
+	}
+	public void setVenue(Venue venue) {
+		ticket.setVenue(venue);
+	}
+	public ArrayList<Seat> getSeat() {
+		return this.ticket.getSeat();
+	}
+	public void setSeat(ArrayList<Seat>  seat) {
+		this.ticket.setSeat(seat);
 	}
 
 }

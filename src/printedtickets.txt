@@ -6,6 +6,10 @@ Ticket includes:
 1 Adult Ticket
 1 Adult Ticket
 
+SEATS:
+Row: 1 Col: 1
+Row: 0 Col: 3
+
 TOTAL COST
 26.0
 ====================

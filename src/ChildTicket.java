@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class ChildTicket extends TicketDecorator {
 	private final static double CHILD_TICKET_COST = 10.00;
@@ -25,5 +26,17 @@ public class ChildTicket extends TicketDecorator {
 	 */
 	public double getCost() {
 		return ticket.getCost() + CHILD_TICKET_COST;
+	}
+	public Venue getVenue() {
+		return ticket.getVenue();
+	}
+	public void setVenue(Venue venue) {
+		ticket.setVenue(venue);
+	}
+	public ArrayList<Seat> getSeat() {
+		return this.ticket.getSeat();
+	}
+	public void setSeat(ArrayList<Seat>  seat) {
+		this.ticket.setSeat(seat);
 	}
 }

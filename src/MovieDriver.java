@@ -25,7 +25,7 @@ public class MovieDriver {
 	
 	private static ArrayList<Event> init(){
 		MovieLoader init = new MovieLoader();
-		return init.Load("src/output.json");
+		return init.Load("./output.json");
 	}
 	/* Initial menu where user can input number in correspondence with where they want to go */
 	private static void printMenu() {
@@ -140,6 +140,7 @@ public class MovieDriver {
 		}
 		/* Algorithm for total # of tickets purchased */
 		int totaltickets = adulttickets + childtickets + seniortickets;
+		chooseSeats(ticket, totaltickets);
 		printCurrentTicket(ticket);
 		System.out.println("You have entered: " + totaltickets);
 		
@@ -208,15 +209,68 @@ public class MovieDriver {
 		System.out.println("\nPlease enter anything and we will pretend it is payment information");
 		in.next();
 		System.out.println("Wonderful! That looks real. Thank you for your purchase.");
-		
 		/*Print tickets*/
 		System.out.println("Would you like to print your tickets?");
 		if(confirm())
 			printTickets(ticket);
 	}
+	/* Choose seats for ticket(s) */
+	private static void chooseSeats(Ticket ticket, int totaltickets) {
+		/* For some reason the venue wouldn't work without being set here. If you can fix, please try */
+		Seat[][] seats = new Seat[5][5];
+		for(int i = 0; i < 5; i++) {
+			for(int j = 0; j < 5; j++) {
+				seats[i][j] = new Seat(new int[2], SeatType.Reclining);
+			}
+		}
+		ticket.venue = new Venue("Default", 0, 5, 5, seats, new ArrayList<Review>());
+		for(int k = 0; k < totaltickets; k++) {
+			for(int i = 0; i < ticket.venue.getSeats().length; i++) {
+				System.out.print(i);
+				for(int j = 0; j < ticket.venue.getSeats()[i].length; j++) {
+					System.out.print("----");
+				}
+				System.out.println();
+				for(int j = 0; j < ticket.venue.getSeats()[i].length; j++) {
+					if(ticket.venue.getSeats()[i][j].taken)
+						System.out.print("| X ");
+					else
+						System.out.print("| " + j + " ");
+				}
+				System.out.println("|");
+				for(int j = 0; j < ticket.venue.getSeats()[i].length; j++) {
+					System.out.print("-----");
+				}
+				System.out.println();
+			}
+			boolean rep = true;
+			while(rep) {
+				System.out.println("\nPlease select your row");
+				int[] spot = new int[2];
+				try {
+					spot[0] = in.nextInt();
+				} catch(Exception e) {
+					in.next();
+				}
+				System.out.println("\nPlease select your column");
+				try {
+					spot[1] = in.nextInt();
+				} catch(Exception e) {
+					in.next();
+				}
+				if(ticket.venue.getSeats()[spot[0]][spot[1]].taken) {
+					System.out.println("\nThat seat is taken! Please try again!");
+				} else {
+					rep = false;
+					ticket.venue.getSeats()[spot[0]][spot[1]].taken = true;
+					ticket.getSeat().add(new Seat(spot, SeatType.Reclining));
+				}
+			}
+		}
+	}
 	/* Prints ticket information to a separate txt file */
 	private static void printTickets(Ticket ticket) {
-		File file = new File("src/printedtickets.txt");
+		File file = new File("./printedtickets.txt");
 		PrintWriter writer;
 		try {
 			writer = new PrintWriter(new FileWriter(file));
@@ -224,6 +278,11 @@ public class MovieDriver {
 			writer.println("PICKUP YOUR TICKETS AND PRODUCTS AT THE FRONT DESK");
 			writer.println("\nTICKET ORDER");
 			writer.println(ticket.getDescription());
+			writer.println("\nSEATS:");
+			for(int i = 0; i < ticket.getSeat().size(); i++) {
+				Seat cur = ticket.getSeat().get(i);
+				writer.println("Row: " + cur.spot[0] + " Col: " + cur.spot[1]);
+			}
 			writer.println("\nTOTAL COST");
 			writer.println(ticket.getCost());
 			writer.println("====================");

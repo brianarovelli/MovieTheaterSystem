@@ -19,3 +19,9 @@
 /Seat.class
 /Driver.class
 /MovieDriver.class
+/Account.class
+/AdultTicket.class
+/BaseTicket.class
+/ChildTicket.class
+/SeniorTicket.class
+/UserAccount.class
