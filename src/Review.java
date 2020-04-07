@@ -11,6 +11,7 @@ public class Review {
 	 * @param description
 	 */
 	public Review(Event event, double rating, String description) {
+		/* User can rate and comment on bought event */
 		this.event = event;
 		this.rating = rating;
 		this.description = description;

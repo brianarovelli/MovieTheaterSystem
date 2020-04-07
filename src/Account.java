@@ -55,6 +55,7 @@ public abstract class Account {
 	}
 	
 	public void printPassword() {
+		/* Prints password out in "*" format */
 		int length = this.password.length();
 		System.out.print("Password: ");
 		for(int i = 0; i < length; i++) {
@@ -64,6 +65,7 @@ public abstract class Account {
 	}
 	
 	public void changePassword() {
+		/* Option to change an existing users password */
 		Scanner in = new Scanner(System.in);
 		System.out.println("PLEASE ENTER OLD PASSWORD");
 		String oldpassword = in.next();
@@ -84,6 +86,7 @@ public abstract class Account {
 		this.email = email;
 	}
 	public void printInfomation() {
+		/* Shows existing users their account information */
 		System.out.println("\nACCOUNT DETAILS");
 		System.out.println("====================");
 		System.out.println("First name: " + this.firstName);

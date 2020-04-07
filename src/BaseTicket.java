@@ -5,6 +5,7 @@ public class BaseTicket extends Ticket{
 	}
 	
 	public double getCost() {
+		/* Creates ticket with no entry, must be bought to gain entry */
 		return 0.0;
 	}
 }

@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -26,7 +27,7 @@ public class MovieDriver {
 		MovieLoader init = new MovieLoader();
 		return init.Load("src/output.json");
 	}
-	
+	/* Initial menu where user can input number in correspondence with where they want to go */
 	private static void printMenu() {
 		System.out.println("====================");
 		System.out.println(" 1. Explore movies");
@@ -64,8 +65,9 @@ public class MovieDriver {
 			return true;
 		}
 	}
-	
+	/* Menu where user can purchase ticket */
 	private static boolean ticketPurchaseMenu(ArrayList<Event> events) {
+		/* Menu to choose which movie you would like to see */
 		System.out.println(" Please input the number corresponding to your movie choice");
 		printEvents(events);
 		int choice = in.nextInt();
@@ -118,24 +120,25 @@ public class MovieDriver {
 	 */
 	private static Ticket numberofTickets() {
 		Ticket ticket = new BaseTicket();
+		/* User enters in # adult tickets */
 		System.out.println("\nPlease enter the amount of ADULT tickets you would like to purchase:");
 		int adulttickets = in.nextInt();
 		for(int i = 0; i < adulttickets; i++) {
 			ticket = new AdultTicket(ticket);
 		}
-		
+		/* User enters in # child tickets */
 		System.out.println("\nPlease enter the amount of CHILD tickets you would like to purchase:");
 		int childtickets = in.nextInt();
 		for(int i = 0; i < childtickets; i++) {
 			ticket = new ChildTicket(ticket);
 		}
-		
+		/* User enters # senior tickets */
 		System.out.println("\nPlease enter the amount of SENIOR tickets you would like to purchase:");
 		int seniortickets = in.nextInt();
 		for(int i = 0; i < seniortickets; i++) {
 			ticket = new SeniorTicket(ticket);
 		}
-		
+		/* Algorithm for total # of tickets purchased */
 		int totaltickets = adulttickets + childtickets + seniortickets;
 		printCurrentTicket(ticket);
 		System.out.println("You have entered: " + totaltickets);
@@ -183,7 +186,7 @@ public class MovieDriver {
 		}
 		return ticket;
 	}
-	
+	/* Menu to order ticket add-ons such as food and drinks */
 	private static void printFoodMenu() {
 		System.out.println("\nPlease select from the following list!");
 		System.out.println("====================");
@@ -194,7 +197,7 @@ public class MovieDriver {
 		System.out.println("-1. Quit food ordering");
 		System.out.println("====================");
 	}
-	
+	/* Prompts user the total $ amount */
 	private static void printCurrentTicket(Ticket ticket) {
 		System.out.println(ticket.getDescription());
 		System.out.println("This totals to a price of $" + ticket.getCost());
@@ -211,7 +214,7 @@ public class MovieDriver {
 		if(confirm())
 			printTickets(ticket);
 	}
-	
+	/* Prints ticket information to a separate txt file */
 	private static void printTickets(Ticket ticket) {
 		File file = new File("src/printedtickets.txt");
 		PrintWriter writer;
@@ -234,8 +237,9 @@ public class MovieDriver {
 		/* TODO Here's where the user can log in. We need it for scenario 3 for employees to enter an event in*/
 		return true;
 	}
-	
+
 	private static boolean createAccountMenu() {
+		/* Menu to create a new account for users */
 		Account newaccount = new UserAccount();
 		
 		System.out.println("Please enter your first name:");
