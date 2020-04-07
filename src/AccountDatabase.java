@@ -19,8 +19,8 @@ public class AccountDatabase {
 		return accountList;
 	}
 	
-	public void addUserAccount(String firstName, String lastName, String username, String password, String email) {
-		accountList.add(new UserAccount(firstName, lastName, username, password, email));
+	public void addUserAccount(String firstName, String lastName, String username, String password, String email, UserType type) {
+		accountList.add(new UserAccount(firstName, lastName, username, password, email, type));
 		AccountWriter.saveAccounts();
 	}
 }

@@ -25,3 +25,7 @@
 /ChildTicket.class
 /SeniorTicket.class
 /UserAccount.class
+/AccountConstants.class
+/AccountDatabase.class
+/AccountLoader.class
+/AccountWriter.class
