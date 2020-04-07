@@ -11,7 +11,6 @@ import java.util.Scanner;
 public class MovieDriver {
 	static Scanner in = new Scanner(System.in);
 	public static void main(String[] args) {
-		//Scanner in = new Scanner(System.in);
 		boolean repeat = true;
 		ArrayList<Event> events = init();
 		while(repeat) {
@@ -225,7 +224,6 @@ public class MovieDriver {
 			writer.println("====================");
 			writer.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
