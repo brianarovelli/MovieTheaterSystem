@@ -75,6 +75,14 @@ public class Event {
 	public ArrayList<Genre> getGenre() {
 		return genre;
 	}
+	
+	public ArrayList<String> getStringGenre() {
+		ArrayList<String> temp = new ArrayList<String>();
+		for(int i = 0; i < genre.size(); i++) {
+			temp.add(genre.get(i).toString());
+		}
+		return temp;
+	}
 
 	public void setGenre(ArrayList<Genre> genre) {
 		this.genre = genre;

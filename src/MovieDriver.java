@@ -33,7 +33,7 @@ public class MovieDriver {
 	 */
 	private static ArrayList<Event> init(){
 		MovieLoader init = new MovieLoader();
-		return init.Load("src/output.json");
+		return init.loadEvents();
 	}
 	
 	/** private static void printMenu()
@@ -363,14 +363,20 @@ public class MovieDriver {
 		}
 	}
 	
-	
-	
+	/** private static boolean loginMenu()
+	 * User logs into their account in system
+	 * @return
+	 */
 	private static boolean loginMenu() {
 		/* TODO Here's where the user can log in. We need it for scenario 3 for employees to enter an event in*/
 		// curUser = UserType.(blank)	Fill this in to update the global variable
 		return true;
 	}
 
+	/** private static boolean createAccountMenu()
+	 *  Inputs information for account creation
+	 * @return boolean to continue through main menu
+	 */
 	private static boolean createAccountMenu() {
 		/* Menu to create a new account for users */
 		AccountDatabase database = AccountDatabase.getDatabase();
@@ -399,14 +405,13 @@ public class MovieDriver {
 		
 		database.addUserAccount(firstName, lastName, username, password, email, type);
 		
-		/*REMOVE THIS PART LATER.... JUST FOR TESTING*/
-		showAccountDatabase();
-		
 		System.out.println("\nNow returning to Main Menu...");
 		return true;
 	}
 	
-	
+	/** private static void showAccountDatabase()
+	 * Helper method to test AccountDatabase when needed
+	 */
 	private static void showAccountDatabase() {
 		AccountDatabase database = AccountDatabase.getDatabase();
 		ArrayList<UserAccount> accounts = database.getAccounts();
@@ -416,6 +421,10 @@ public class MovieDriver {
 		}
 	}
 	
+	/** private static boolean accountOptions()
+	 * Menu options for Admin accounts
+	 * @return boolean to continue looping through main menu
+	 */
 	private static boolean accountOptions() {
 		boolean rep = true;
 		while(rep) {
@@ -433,6 +442,11 @@ public class MovieDriver {
 		return true;
 	}
 	
+	/** private static boolean accSwitch(int choice)
+	 * Directors for menu choices in AccountOptions()
+	 * @param choice
+	 * @return
+	 */
 	private static boolean accSwitch(int choice) {
 		switch(choice) {
 		case -1:
@@ -448,6 +462,9 @@ public class MovieDriver {
 		}
 	}
 	
+	/** private static void removeMovie()
+	 * Admin user can remove Event from the list
+	 */
 	private static void removeMovie() {
 		System.out.println("Please enter event name:");
 		String eventName = in.next();
@@ -464,6 +481,10 @@ public class MovieDriver {
 		events.remove(index);
 		System.out.println("Successfully removed " + eventName);
 	}
+	
+	/** private static void addMovie()
+	 * Admin user can add Event to the list
+	 */
 	private static void addMovie() {
 		System.out.println("Please enter event name:");
 		String eventName = in.next();

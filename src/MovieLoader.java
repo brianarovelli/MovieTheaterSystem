@@ -4,16 +4,16 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-public class MovieLoader{
+public class MovieLoader extends MovieConstants {
 	/**
 	 * Loads movies from json
 	 * @param path Path to file
 	 * @return ArrayList of movies
 	 */
-	public ArrayList<Event> Load(String path) {
+	public static ArrayList<Event> loadEvents() {
 		try {
 			//Load JSON file
-			FileReader reader = new FileReader(path);
+			FileReader reader = new FileReader(EVENTS_FILE);
 			JSONArray moviesJSON = (JSONArray)new JSONParser().parse(reader);
 			//Create ArrayList to be filled
 			ArrayList<Event> movies = new ArrayList<Event>();
