@@ -87,7 +87,7 @@ public abstract class Account {
 	}
 	public void printInfomation() {
 		/* Shows existing users their account information */
-		System.out.println("\nACCOUNT DETAILS");
+		System.out.println("ACCOUNT DETAILS");
 		System.out.println("====================");
 		System.out.println("First name: " + this.firstName);
 		System.out.println("Last name: " + this.lastName);

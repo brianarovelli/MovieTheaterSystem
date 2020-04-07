@@ -10,12 +10,10 @@ public class AccountLoader extends AccountConstants {
 		ArrayList<UserAccount> accounts = new ArrayList<UserAccount>();
 		
 		try {
-			System.out.println("VIBES 1");
 			FileReader reader = new FileReader(ACCOUNTS_FILE);
 			JSONParser parser = new JSONParser();
 			JSONArray accountsJSON = (JSONArray)new JSONParser().parse(reader);
 			
-			System.out.println("VIBES 2");
 			for(int i = 0; i < accountsJSON.size(); i++) {
 				JSONObject accountJSON = (JSONObject)accountsJSON.get(i);
 				String firstName = accountJSON.get(ACCOUNT_FIRST_NAME).toString();

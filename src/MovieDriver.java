@@ -25,7 +25,7 @@ public class MovieDriver {
 	
 	private static ArrayList<Event> init(){
 		MovieLoader init = new MovieLoader();
-		return init.Load("./output.json");
+		return init.Load("src/output.json");
 	}
 	/* Initial menu where user can input number in correspondence with where they want to go */
 	private static void printMenu() {
@@ -271,7 +271,7 @@ public class MovieDriver {
 	}
 	/* Prints ticket information to a separate txt file */
 	private static void printTickets(Ticket ticket) {
-		File file = new File("./printedtickets.txt");
+		File file = new File("src/printedtickets.txt");
 		PrintWriter writer;
 		try {
 			writer = new PrintWriter(new FileWriter(file));
