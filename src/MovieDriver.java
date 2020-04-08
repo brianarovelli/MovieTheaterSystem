@@ -55,6 +55,7 @@ public class MovieDriver {
 		} else if (curUser == UserType.Admin){
 		System.out.println(" 5. Account Options");
 		} 
+		System.out.println(" 6. Write a review.");
 		System.out.println("-1. Quit program");
 		System.out.println("====================");
 	}
@@ -95,6 +96,8 @@ public class MovieDriver {
 			return createAccountMenu();
 		case 5:
 			return accountOptions();
+		case 6:
+			return reviewMenu(events);
 		default:
 			return true;
 		}
@@ -125,6 +128,26 @@ public class MovieDriver {
 		purchaseTicket(choice, events);
 		return true;
 	}
+	private static boolean reviewMenu(ArrayList<Event> events) {
+		System.out.println(" Please input the number corresponding to the movie you'd like to review.");
+		printEvents(events);
+		int choice = in.nextInt();
+		
+		int rating = 0;
+		String description = "";
+		System.out.println("How many stars, out of 5, do you wanna give " + events.get(choice).getTitle() + "?");
+		rating = in.nextInt();
+		System.out.println("Great! Please write your review now.");
+		in.nextLine();
+		description += " " + in.nextLine();
+		Review r = new Review(events.get(choice), rating, description);
+		System.out.println("================");
+		System.out.println("***** Printing your review *****");
+		System.out.println("Movie: " + r.getEventTitle() + "\n"
+				+ "Rating: " + r.getRating() + "\n" 
+				+ "Description: " + r.getDescription());
+		return true;
+		}
 	
 	/** private static void purchaseTicket(int choice, ArrayList<Event> events)
 	 * User purchases a ticket

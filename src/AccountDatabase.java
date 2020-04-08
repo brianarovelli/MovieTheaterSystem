@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+
+
 public class AccountDatabase {
 	private static AccountDatabase accountDatabase = null;
 	private static ArrayList<UserAccount> accountList = new ArrayList<UserAccount>();
