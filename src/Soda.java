@@ -1,7 +1,7 @@
 
 public class Soda extends TicketDecorator {
-	private final double SODA_COST = 4.35;
-	private final int SODA_POINTS = 1;
+	private final static double SODA_COST = 4.35;
+	private final static int SODA_POINTS = 1;
 	
 	Ticket ticket;
 	
