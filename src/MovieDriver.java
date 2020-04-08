@@ -545,6 +545,7 @@ public class MovieDriver {
 	 * Admin user can add Event to the list
 	 */
 	private static void addMovie() {
+		MovieDatabase database = MovieDatabase.getDatabase();
 		System.out.println("Please enter event name:");
 		String eventName = in.next();
 		
@@ -622,7 +623,20 @@ public class MovieDriver {
 		int t = in.nextInt();
 		Time time = new Time(t, 0, 0);
 		
-		events.add(new Event(eType, eventName, eventDescription, actors, genres, ad, price, points, time));
+		//events.add(new Event(eType, eventName, eventDescription, actors, genres, ad, price, points, time));
+		database.addEvent(eType, eventName, eventDescription, actors, genres, ad, price, points, time);
+		showEventDatabase();
+	}
+	
+	private static void showEventDatabase() {
+		MovieDatabase database = MovieDatabase.getDatabase();
+		ArrayList<Event> exevents = database.getEvents();
+		
+		System.out.println(exevents.size());
+		System.out.println(events.size());
+		for(Event event: exevents) {
+			System.out.println(event.getTitle());
+		}
 	}
 }
 

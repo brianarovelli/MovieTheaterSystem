@@ -33,7 +33,7 @@ public class MovieWriter extends MovieConstants {
 
 		JSONArray actors = new JSONArray();
 		for(int i = 0; i < event.getActors().size(); i++) {
-			actors.add(event.getActors().get(i).toString());
+			actors.add(event.getActors().get(i).getName());
 		}
 		accountDetails.put(EVENT_ACTORS, actors);
 		accountDetails.put(EVENT_RATING, event.getRating());
@@ -43,7 +43,7 @@ public class MovieWriter extends MovieConstants {
 		for(int i = 0; i < event.getGenre().size(); i++) {
 			genres.add(event.getGenre().get(i).toString());
 		}
-		accountDetails.put(EVENT_GENRE, genres.toString());
+		accountDetails.put(EVENT_GENRE, genres);
 		return accountDetails;
 	}
 }
