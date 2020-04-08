@@ -1,11 +1,16 @@
 import java.util.ArrayList;
 
 public abstract class Ticket {	
-	protected Movie movie;
+	protected Event event;
 	protected String description;
 	protected ArrayList<Seat> seat;
 	protected Venue venue;
 	
+	/* GETTERS AND SETTERS */ 
+	
+	public Event getEvent() {
+		return event;
+	}
 	public String getDescription() {
 		return description;
 	}

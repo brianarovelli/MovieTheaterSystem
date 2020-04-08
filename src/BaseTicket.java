@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 
 public class BaseTicket extends Ticket{
+	
+	/** public BaseTicket()
+	 * Creates BaseTicket to add drinks and tickets onto
+	 */
 	public BaseTicket() {
 		this.description = "Ticket includes: ";
 		Seat[][] seats = new Seat[5][5];
@@ -12,15 +16,21 @@ public class BaseTicket extends Ticket{
 		this.venue = new Venue("Default", 0, 5, 5,seats, new ArrayList<Review>());
 		this.seat = new ArrayList<Seat>();
 	}
+	
+	/* GETTERS AND SETTERS */
+	
 	public Venue getVenue() {
 		return venue;
 	}
+	
 	public void setVenue(Venue venue) {
 		this.venue = venue;
 	}
+	
 	public ArrayList<Seat> getSeat() {
 		return seat;
 	}
+	
 	public void setSeat(ArrayList<Seat>  seat) {
 		this.seat = seat;
 	}

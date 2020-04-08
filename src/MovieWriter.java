@@ -6,6 +6,10 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class MovieWriter extends MovieConstants {
+	
+	/** public static void saveEvents() 
+	 * Adds JSON Objects of Events to JSON file
+	 */
 	public static void saveEvents() {
 		MovieDatabase database = MovieDatabase.getDatabase();
 		ArrayList<Event> events = database.getEvents();
@@ -26,6 +30,11 @@ public class MovieWriter extends MovieConstants {
 		}
 	}
 
+	/** private static Object getEventJSON(Event event)
+	 * Adds Event details to JSONObject
+	 * @param event
+	 * @return
+	 */
 	private static Object getEventJSON(Event event) {
 		JSONObject accountDetails = new JSONObject();
 		accountDetails.put(EVENT_TITLE, event.getTitle());

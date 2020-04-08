@@ -10,7 +10,6 @@ public class AdultTicket extends TicketDecorator{
 	 * Creates new Adult Ticket object and sets Ticket
 	 * @param ticket 
 	 */
-	
 	public AdultTicket(Ticket ticket) {
 		this.ticket = ticket;
 	}
@@ -28,9 +27,20 @@ public class AdultTicket extends TicketDecorator{
 	public double getCost() {
 		return ticket.getCost() + ADULT_TICKET_COST;
 	}
+	
+	/** public int getPoints()
+	 * Adds points of added item onto order
+	 */
+	public int getPoints() {
+		return ticket.getPoints() + ADULT_TICKET_POINTS;
+	}
+	
+	/* GETTERS AND SETTERS */
+	
 	public Venue getVenue() {
 		return ticket.getVenue();
 	}
+	
 	public void setVenue(Venue venue) {
 		ticket.setVenue(venue);
 	}
@@ -39,12 +49,6 @@ public class AdultTicket extends TicketDecorator{
 	}
 	public void setSeat(ArrayList<Seat>  seat) {
 		this.ticket.setSeat(seat);
-	}
-	/** public int getPoints()
-	 * Adds points of added item onto order
-	 */
-	public int getPoints() {
-		return ticket.getPoints() + ADULT_TICKET_POINTS;
 	}
 
 }

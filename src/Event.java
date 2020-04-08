@@ -23,7 +23,6 @@ public class Event {
 	 * @param points
 	 * @param showTime
 	 */
-	
 	public Event(EventType eventType, String title, String description, ArrayList<Actor> actors, ArrayList<Genre> genre, Advisory advisory, double price, int points, Time showTime) {
 		this.eventType = eventType;
 		this.title = title;
@@ -38,14 +37,6 @@ public class Event {
 		reviews = new ArrayList<Review>();
 	}
 	
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
 	/** public void calculateRating()
 	 * Calculates the rating of a movie based on the ArrayList of reviews
 	 */
@@ -70,8 +61,22 @@ public class Event {
 		reviews.add(review);
 	}
 
+	public void printGenre() {
+		for(int i = 0; i < genre.size(); i++) {
+			System.out.print(genre.get(i) + " ");
+		}
+	}
+
 	//GETTERS AND SETTERS	
 	
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	public ArrayList<Genre> getGenre() {
 		return genre;
 	}
@@ -88,12 +93,6 @@ public class Event {
 		this.genre = genre;
 	}
 	
-	public void printGenre() {
-		for(int i = 0; i < genre.size(); i++) {
-			System.out.print(genre.get(i) + " ");
-		}
-	}
-
 	public Advisory getAdvisory() {
 		return advisory;
 	}
