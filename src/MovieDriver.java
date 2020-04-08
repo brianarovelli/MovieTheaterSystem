@@ -59,6 +59,9 @@ public class MovieDriver {
 		System.out.println(" 5. Account Options");
 		} 
 		System.out.println(" 6. Write a review.");
+		if (curUser == UserType.Employee) {
+			System.out.println("7. Add a movie.");
+		}
 		System.out.println("-1. Quit program");
 		System.out.println("====================");
 	}
@@ -101,6 +104,8 @@ public class MovieDriver {
 			return accountOptions();
 		case 6:
 			return reviewMenu(events);
+		case 7:
+			return addMovie();
 		default:
 			return true;
 		}
@@ -597,10 +602,12 @@ public class MovieDriver {
 	
 	/** private static void addMovie()
 	 * Admin user can add Event to the list
+	 * @return 
 	 */
-	private static void addMovie() {
+	private static boolean addMovie() {
 		System.out.println("Please enter event name:");
-		String eventName = in.next();
+		String eventName = "";
+		eventName += in.next();
 		
 		System.out.println("Please enter event description:");
 		in.nextLine(); /* Quick bug fix */
@@ -631,7 +638,6 @@ public class MovieDriver {
 				if(in.hasNextInt()) {
 					if(in.nextInt() == -1) {
 						rep = false;
-						continue;
 					}
 				}
 				genres.add(Genre.valueOf(in.next()));
@@ -678,8 +684,8 @@ public class MovieDriver {
 		Time time = new Time(t, 0, 0);
 		
 		events.add(new Event(eType, eventName, eventDescription, actors, genres, ad, price, points, time));
+		return true;
 	}
-	
 }
 
 
