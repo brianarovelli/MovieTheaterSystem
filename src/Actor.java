@@ -11,4 +11,12 @@ public class Actor {
 		this.first = first;
 		this.last = last;
 	}
+	
+	/** public String getName()
+	 * Returns full name of Actor
+	 * @return
+	 */
+	public String getName() {
+		return first + " " + last;
+	}
 }

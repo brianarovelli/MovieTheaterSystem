@@ -6,6 +6,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class AccountsLoader extends AccountConstants {
+	
 	/**
 	 * Loads accounts from json
 	 * @param path Path to file
@@ -16,8 +17,10 @@ public class AccountsLoader extends AccountConstants {
 			//Load JSON file
 			FileReader reader = new FileReader(ACCOUNTS_FILE);
 			JSONArray accountJSON = (JSONArray)new JSONParser().parse(reader);
+			
 			//Create ArrayList to be filled with file's elements
 			ArrayList<UserAccount> accounts = new ArrayList<UserAccount>();
+			
 			//Cycle through array of JSON Objects
 			for(int i = 0; i < accountJSON.size(); i++) {
 				JSONObject accountsJSON = (JSONObject)accountJSON.get(i);

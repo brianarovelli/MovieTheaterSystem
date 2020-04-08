@@ -28,6 +28,16 @@ public class SeniorTicket extends TicketDecorator {
 	public double getCost() {
 		return ticket.getCost() + SENIOR_TICKET_COST;
 	}
+	
+	/** public int getPoints()
+	 * Adds points of added item onto order
+	 */
+	public int getPoints() {
+		return ticket.getPoints() + SENIOR_TICKET_POINTS;
+	}
+	
+	/* GETTERS AND SETTERS */
+	
 	public Venue getVenue() {
 		return ticket.getVenue();
 	}
@@ -40,10 +50,5 @@ public class SeniorTicket extends TicketDecorator {
 	public void setSeat(ArrayList<Seat>  seat) {
 		this.ticket.setSeat(seat);
 	}
-	/** public int getPoints()
-	 * Adds points of added item onto order
-	 */
-	public int getPoints() {
-		return ticket.getPoints() + SENIOR_TICKET_POINTS;
-	}
+	
 }

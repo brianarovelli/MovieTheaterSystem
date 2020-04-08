@@ -19,6 +19,7 @@ public class MovieLoader extends MovieConstants {
 			//Create ArrayList to be filled
 			ArrayList<Event> movies = new ArrayList<Event>();
 			JSONArray moviesJSON = (JSONArray)new JSONParser().parse(reader);
+			
 			//Cycle through array of JSON Objects
 			for(int i = 0; i < moviesJSON.size(); i++) {
 				JSONObject movieJSON = (JSONObject)moviesJSON.get(i);

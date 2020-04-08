@@ -1,3 +1,4 @@
+
 import java.awt.*;
 import java.io.File;
 import java.io.FileWriter;
@@ -6,10 +7,12 @@ import java.io.PrintWriter;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Scanner;
-/**
- * Class to run entire program
- *
+
+/** Team [Object object]
+ * Evan Bryer, Briana Rovelli, Nick Rubino, Mitchell Lambert
+ * Class to run entire program 
  */
+
 public class MovieDriver {
 	static Scanner in = new Scanner(System.in);
 	static UserType curUser = UserType.Guest;
@@ -56,6 +59,9 @@ public class MovieDriver {
 		System.out.println(" 5. Account Options");
 		} 
 		System.out.println(" 6. Write a review.");
+		if (curUser == UserType.Employee) {
+			System.out.println("7. Add a movie.");
+		}
 		System.out.println("-1. Quit program");
 		System.out.println("====================");
 	}
@@ -98,6 +104,8 @@ public class MovieDriver {
 			return accountOptions();
 		case 6:
 			return reviewMenu(events);
+		case 7:
+			return addMovie();
 		default:
 			return true;
 		}
@@ -128,6 +136,12 @@ public class MovieDriver {
 		purchaseTicket(choice, events);
 		return true;
 	}
+	
+	/** private static boolean reviewMenu(ArrayList<Event> events)
+	 * Allows user to create Review
+	 * @param events - list of all events
+	 * @return
+	 */
 	private static boolean reviewMenu(ArrayList<Event> events) {
 		System.out.println(" Please input the number corresponding to the movie you'd like to review.");
 		printEvents(events);
@@ -141,6 +155,8 @@ public class MovieDriver {
 		in.nextLine();
 		description += " " + in.nextLine();
 		Review r = new Review(events.get(choice), rating, description);
+		events.get(choice).addReview(r);
+		events.get(choice).calculateRating();
 		System.out.println("================");
 		System.out.println("***** Printing your review *****");
 		System.out.println("Movie: " + r.getEventTitle() + "\n"
@@ -428,6 +444,11 @@ public class MovieDriver {
 		return true;
 	}
 
+	/** private static boolean userExists(String userName)
+	 * Returns true if Username is in list of Accounts
+	 * @param userName
+	 * @return
+	 */
 	private static boolean userExists(String userName) {
 		for (Account i : accounts) {
 			if (i.getUsername().equals(userName))
@@ -435,6 +456,13 @@ public class MovieDriver {
 		}
 		return false;
 	}
+	
+	/** private static boolean correctPassword(String username, String password)
+	 * Checks if password entered is correct
+	 * @param username
+	 * @param password
+	 * @return
+	 */
 	private static boolean correctPassword(String username, String password) {
 		for (Account i : accounts) {
 			if (i.getUsername().equalsIgnoreCase(username)) {
@@ -445,6 +473,13 @@ public class MovieDriver {
 		}
 		return false;
 	}
+	
+	/** private static UserType accountType (String username, String password)
+	 * Returns userType of Account
+	 * @param username
+	 * @param password
+	 * @return
+	 */
 	private static UserType accountType (String username, String password) {
 		for (Account i : accounts) {
 			if (i.getUsername().equalsIgnoreCase(username) 
@@ -455,6 +490,7 @@ public class MovieDriver {
 		}
 		return null;
 	}
+	
 	/** private static boolean createAccountMenu()
 	 *  Inputs information for account creation
 	 * @return boolean to continue through main menu
@@ -566,13 +602,16 @@ public class MovieDriver {
 	
 	/** private static void addMovie()
 	 * Admin user can add Event to the list
+	 * @return 
 	 */
-	private static void addMovie() {
+	private static boolean addMovie() {
 		System.out.println("Please enter event name:");
-		String eventName = in.next();
+		String eventName = "";
+		eventName += in.next();
 		
 		System.out.println("Please enter event description:");
-		String eventDescription = in.next();
+		in.nextLine(); /* Quick bug fix */
+		String eventDescription = in.nextLine();
 		
 		System.out.println("Please enter any actors, when finished enter -1:");
 		boolean rep = true;
@@ -599,7 +638,6 @@ public class MovieDriver {
 				if(in.hasNextInt()) {
 					if(in.nextInt() == -1) {
 						rep = false;
-						continue;
 					}
 				}
 				genres.add(Genre.valueOf(in.next()));
@@ -646,6 +684,7 @@ public class MovieDriver {
 		Time time = new Time(t, 0, 0);
 		
 		events.add(new Event(eType, eventName, eventDescription, actors, genres, ad, price, points, time));
+		return true;
 	}
 }
 

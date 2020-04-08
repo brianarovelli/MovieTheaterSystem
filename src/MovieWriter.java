@@ -6,6 +6,10 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class MovieWriter extends MovieConstants {
+	
+	/** public static void saveEvents() 
+	 * Adds JSON Objects of Events to JSON file
+	 */
 	public static void saveEvents() {
 		MovieDatabase database = MovieDatabase.getDatabase();
 		ArrayList<Event> events = database.getEvents();
@@ -26,6 +30,11 @@ public class MovieWriter extends MovieConstants {
 		}
 	}
 
+	/** private static Object getEventJSON(Event event)
+	 * Adds Event details to JSONObject
+	 * @param event
+	 * @return
+	 */
 	private static Object getEventJSON(Event event) {
 		JSONObject accountDetails = new JSONObject();
 		accountDetails.put(EVENT_TITLE, event.getTitle());
@@ -33,7 +42,7 @@ public class MovieWriter extends MovieConstants {
 
 		JSONArray actors = new JSONArray();
 		for(int i = 0; i < event.getActors().size(); i++) {
-			actors.add(event.getActors().get(i).toString());
+			actors.add(event.getActors().get(i).getName());
 		}
 		accountDetails.put(EVENT_ACTORS, actors);
 		accountDetails.put(EVENT_RATING, event.getRating());
@@ -43,7 +52,7 @@ public class MovieWriter extends MovieConstants {
 		for(int i = 0; i < event.getGenre().size(); i++) {
 			genres.add(event.getGenre().get(i).toString());
 		}
-		accountDetails.put(EVENT_GENRE, genres.toString());
+		accountDetails.put(EVENT_GENRE, genres);
 		return accountDetails;
 	}
 }

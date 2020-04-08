@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 /* Holds all necessary information for movie */
 public class Movie {
-	public String name;
+	/*public String name;
 	public String description;
 	public ArrayList<Actor> actors;
 	public ArrayList<Genre> genres;
@@ -10,5 +10,5 @@ public class Movie {
 		this.description = description;
 		this.actors = actors;
 		this.genres = genres;
-	}
+	}*/
 }

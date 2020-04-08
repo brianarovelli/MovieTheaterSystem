@@ -4,14 +4,12 @@ PICKUP YOUR TICKETS AND PRODUCTS AT THE FRONT DESK
 TICKET ORDER
 Ticket includes: 
 1 Adult Ticket
-1 Child Ticket
-1 Senior Ticket
+1 Adult Ticket
 
 SEATS:
-Row: 1 Col: 0
-Row: 1 Col: 1
-Row: 1 Col: 2
+Row: 0 Col: 0
+Row: 0 Col: 1
 
 TOTAL COST
-35.0
+26.0
 ====================

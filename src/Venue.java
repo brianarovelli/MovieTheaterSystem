@@ -24,6 +24,8 @@ public class Venue {
 		this.reviews = reviews;
 	}
 
+	/* GETTERS AND SETTERS */ 
+	
 	public String getName() {
 		return name;
 	}

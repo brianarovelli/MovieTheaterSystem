@@ -7,6 +7,9 @@ import org.json.simple.JSONObject;
 
 public class AccountWriter extends AccountConstants {
 	
+	/** public static void saveAccounts()
+	 * Creates JSON objects of Accounts and adds them to a JSON file
+	 */
 	public static void saveAccounts() {
 		AccountDatabase database = AccountDatabase.getDatabase();
 		ArrayList<UserAccount> accounts = database.getAccounts();
@@ -27,6 +30,11 @@ public class AccountWriter extends AccountConstants {
 		}
 	}
 
+	/** private static Object getAccountJSON(UserAccount account)
+	 * Add details of a JSONObject from Accounts
+	 * @param account
+	 * @return
+	 */
 	private static Object getAccountJSON(UserAccount account) {
 		JSONObject accountDetails = new JSONObject();
 		accountDetails.put(ACCOUNT_FIRST_NAME, account.getFirstName());

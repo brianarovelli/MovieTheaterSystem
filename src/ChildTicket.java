@@ -10,7 +10,6 @@ public class ChildTicket extends TicketDecorator {
 	 * Creates new Child Ticket object and sets Ticket
 	 * @param ticket 
 	 */
-	
 	public ChildTicket(Ticket ticket) {
 		this.ticket = ticket;
 	}
@@ -28,6 +27,16 @@ public class ChildTicket extends TicketDecorator {
 	public double getCost() {
 		return ticket.getCost() + CHILD_TICKET_COST;
 	}
+	
+	/** public int getPoints()
+	 * Adds points of added item onto order
+	 */
+	public int getPoints() {
+		return ticket.getPoints() + CHILD_TICKET_POINTS;
+	}
+	
+	/* GETTERS AND SETTERS */
+	
 	public Venue getVenue() {
 		return ticket.getVenue();
 	}
@@ -40,10 +49,5 @@ public class ChildTicket extends TicketDecorator {
 	public void setSeat(ArrayList<Seat>  seat) {
 		this.ticket.setSeat(seat);
 	}
-	/** public int getPoints()
-	 * Adds points of added item onto order
-	 */
-	public int getPoints() {
-		return ticket.getPoints() + CHILD_TICKET_POINTS;
-	}
+	
 }
