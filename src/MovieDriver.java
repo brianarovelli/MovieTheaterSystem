@@ -638,11 +638,12 @@ public class MovieDriver {
 				if(in.hasNextInt()) {
 					if(in.nextInt() == -1) {
 						rep = false;
+						continue;
 					}
 				}
 				genres.add(Genre.valueOf(in.next()));
 			} catch(Exception e) {
-				System.out.println("Invalid entry");
+				//System.out.println("Invalid entry");
 				in.next();
 			}
 		}

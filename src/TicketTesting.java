@@ -1,0 +1,179 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class TicketTesting {
+	double expectedCost;
+	int expectedPoints;
+	String expectedDescription;
+
+	double actualCost;
+	int actualPoints;
+	String actualDescription;
+	
+	double expectedBaseCost = 0.00;
+	double expectedChildCost = 10.00;
+	double expectedAdultCost = 13.00;
+	double expectedSeniorCost = 12.00;
+	double expectedCandyCost = 3.25;
+	double expectedBeerCost = 5.50;
+	double expectedPopcornCost = 8.85;
+	int expectedBasePoints = 0;
+	int expectedTicketPoints = 5;
+	int expectedCandyPoints = 1;
+    int expectedBeerPoints = 1; 
+    int expectedPopcornPoints = 1;
+	String expectedBaseDescription = "Ticket includes: ";
+	String expectedChildDescription = "\n1 Child Ticket";
+	String expectedAdultDescription = "\n1 Adult Ticket";
+	String expectedSeniorDescription = "\n1 Senior Ticket";
+	String expectedCandyDescription = "\n1 Candy";
+	String expectedBeerDescription = "\n1 Beer";
+	String expectedPopcornDescription = "\n1 Popcorn";
+			
+	@Test
+	void testTicket() {
+		BaseTicket ticket = new BaseTicket();
+		assertNotEquals(ticket, null);
+
+		expectedCost = expectedBaseCost;
+		expectedDescription = expectedBaseDescription;
+		expectedPoints = expectedBasePoints;
+		
+		actualCost = ticket.getCost();
+		actualPoints = ticket.getPoints();
+		actualDescription = ticket.getDescription();
+		
+		assertEquals(actualCost, expectedBaseCost);
+		assertEquals(actualPoints, expectedPoints);
+		assertEquals(actualDescription, expectedDescription);
+		
+		/* Calls from switch statement add upon initialized BaseTicket with all each ticket type separately to test subclasses' functionality */
+		
+		int num = 0;
+		while (num <= 2) {
+			switch(num) {
+			case 0:
+				testChildTicket(ticket);
+			case 1:
+				testAdultTicket(ticket);
+			case 2:
+				testSeniorTicket(ticket);
+			}
+			++num;
+		}
+	}
+	/**
+	 * Methods Test<SubClass> Determine if <SubClass> constructors adds to a base ticket and call tester methods specific to that <SubClass> attributes
+	 * @param ticket initialized object from above method
+	 * 
+	 * Additionally, each of the three classes tests a different one of the Add-On classes to test ticket decorator
+	 */
+	void testChildTicket (BaseTicket prevTicket) {		
+		ChildTicket actual = new ChildTicket(prevTicket);
+		assertNotEquals(actual, prevTicket);
+		testChildAttributes(actual, prevTicket);
+		testCandyAttributes(actual);
+	}
+	void testAdultTicket (BaseTicket prevTicket) {
+		AdultTicket actual = new AdultTicket(prevTicket);
+		assertNotEquals(actual, prevTicket);
+		testAdultAttributes(actual, prevTicket);
+		testBeerAttributes(actual);
+	}
+	void testSeniorTicket (BaseTicket prevTicket) {
+		SeniorTicket actual = new SeniorTicket(prevTicket);
+		assertNotEquals(actual, prevTicket);
+		testSeniorAttributes(actual, prevTicket);
+		testPopcornAttributes(actual);
+	}
+	/**
+	 * Methods Test<SubClass>Attributes determine if <Subclass> object contains attributes equal to expected values
+	 * @param actual is constructed <Subclass> object from Test<Subclass> methods
+	 */
+	void testChildAttributes (ChildTicket actual, BaseTicket baseTicket) {
+		expectedCost = expectedChildCost;
+		expectedPoints = expectedTicketPoints;
+		expectedDescription = expectedBaseDescription + expectedChildDescription;
+		
+		actualCost = actual.getCost();
+    	actualPoints = actual.getPoints();
+		actualDescription = actual.getDescription();
+		
+		assertEquals(expectedCost, actualCost);
+		assertEquals(expectedPoints, actualPoints);
+		assertEquals(expectedDescription, actualDescription);
+	}
+	void testAdultAttributes (AdultTicket actual, BaseTicket baseTicket) {
+		expectedCost = expectedBaseCost + expectedAdultCost;
+		expectedPoints = expectedBasePoints + expectedTicketPoints;
+		expectedDescription = expectedBaseDescription + expectedAdultDescription;
+		
+		actualCost = actual.getCost();
+		actualPoints = actual.getPoints();
+		actualDescription = actual.getDescription();
+		
+		assertEquals(expectedCost, actualCost);
+		assertEquals(expectedPoints, actualPoints);
+		assertEquals(expectedDescription, actualDescription);
+	}
+	void testSeniorAttributes (SeniorTicket actual, BaseTicket baseTicket) {
+		expectedCost = expectedBaseCost + expectedSeniorCost;
+		expectedPoints = expectedBasePoints + expectedTicketPoints;
+		expectedDescription = expectedBaseDescription + expectedSeniorDescription;
+		
+		actualCost = actual.getCost();
+		actualPoints = actual.getPoints();
+		actualDescription = actual.getDescription();
+		
+		assertEquals(expectedCost, actualCost);
+		assertEquals(expectedPoints, actualPoints);
+		assertEquals(expectedDescription, actualDescription);
+	}
+		
+	void testCandyAttributes (ChildTicket actual) {
+		expectedCost = expectedCost + expectedCandyCost;
+		expectedPoints = expectedPoints + expectedCandyPoints;
+		expectedDescription = expectedDescription + expectedCandyDescription;
+		
+		Candy candyObj = new Candy(actual);
+		actualCost = candyObj.getCost();
+		actualPoints = candyObj.getPoints();
+		actualDescription = candyObj.getDescription();
+		
+		assertEquals(expectedCost, actualCost);
+		assertEquals(expectedPoints, actualPoints);
+		assertEquals(expectedDescription, actualDescription);
+		
+	}
+	void testBeerAttributes (AdultTicket actual) {
+		expectedCost = expectedCost + expectedBeerCost;
+		expectedPoints = expectedPoints + expectedBeerPoints;
+		expectedDescription = expectedDescription + expectedBeerDescription;
+		
+		Beer beerObj = new Beer(actual);
+		actualCost = beerObj.getCost();
+		actualPoints = beerObj.getPoints();
+		actualDescription = beerObj.getDescription();
+		
+		assertEquals(expectedCost, actualCost);
+		assertEquals(expectedPoints, actualPoints);
+		assertEquals(expectedDescription, actualDescription);
+	}
+	void testPopcornAttributes (SeniorTicket actual) {
+		expectedCost = expectedCost + expectedPopcornCost;
+		expectedPoints = expectedPoints + expectedPopcornPoints;
+		expectedDescription = expectedDescription + expectedPopcornDescription;
+		
+		Popcorn popcornObj = new Popcorn(actual);
+		actualCost = popcornObj.getCost();
+		actualPoints = popcornObj.getPoints();
+		actualDescription = popcornObj.getDescription();
+		
+		assertEquals(expectedCost, actualCost);
+		assertEquals(expectedPoints, actualPoints);
+		assertEquals(expectedDescription, actualDescription);
+	}
+	
+}
