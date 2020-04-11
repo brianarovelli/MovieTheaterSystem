@@ -31,7 +31,12 @@ class TicketTesting {
 	String expectedCandyDescription = "\n1 Candy";
 	String expectedBeerDescription = "\n1 Beer";
 	String expectedPopcornDescription = "\n1 Popcorn";
-			
+	
+	
+	/**
+	 * Verifies constructors for all classes associated with a ticket work correctly through a switch statement calling helper methods that add onto initial Ticket object.
+	 * After verifying base constructor creates works, method successively calls helper methods to test subclasses separately.
+	 */
 	@Test
 	void testTicket() {
 		BaseTicket ticket = new BaseTicket();
@@ -65,10 +70,11 @@ class TicketTesting {
 		}
 	}
 	/**
-	 * Methods Test<SubClass> Determine if <SubClass> constructors adds to a base ticket and call tester methods specific to that <SubClass> attributes
-	 * @param ticket initialized object from above method
+	 *  These comments apply to the following three methods in the form "Test<SubClass>"
 	 * 
-	 * Additionally, each of the three classes tests a different one of the Add-On classes to test ticket decorator
+	 *  Determine if constructors successively add onto initial object and, if so, passes updated reference to further testing for object attributes.
+	 *  Afterwards each method tests one of the three Add-On classes to ensure Decorator works 
+	 *  @param ticket BaseTicket object 
 	 */
 	void testChildTicket (BaseTicket prevTicket) {		
 		ChildTicket actual = new ChildTicket(prevTicket);
@@ -89,8 +95,10 @@ class TicketTesting {
 		testPopcornAttributes(actual);
 	}
 	/**
-	 * Methods Test<SubClass>Attributes determine if <Subclass> object contains attributes equal to expected values
-	 * @param actual is constructed <Subclass> object from Test<Subclass> methods
+	 * These comments apply to the following three methods in form "test<SubClass>Attributes"
+	 * Updates expected values in each method to validate equality with returned values from getters.
+	 * @param actual <SubClass> is constructed object upon initial object from corresponding methods above
+	 * @param baseTicket BaseTicket is the initial object from corresponding methods above before adding onto it
 	 */
 	void testChildAttributes (ChildTicket actual, BaseTicket baseTicket) {
 		expectedCost = expectedChildCost;
@@ -131,7 +139,14 @@ class TicketTesting {
 		assertEquals(expectedPoints, actualPoints);
 		assertEquals(expectedDescription, actualDescription);
 	}
-		
+	
+	
+	/**
+	 * These comments apply to the following three methods in the form "test<AddOn>Attributes>"
+	 * 
+	 * With same strategy as above three methods, all tests in these methods determine Decorator Pattern implemented properly 
+	 * @param actual <SubClass> is the object passed in from either one of the three methods above corresponding to a subclass object
+	 */
 	void testCandyAttributes (ChildTicket actual) {
 		expectedCost = expectedCost + expectedCandyCost;
 		expectedPoints = expectedPoints + expectedCandyPoints;
