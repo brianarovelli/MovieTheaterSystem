@@ -22,8 +22,8 @@ class TicketTesting {
 	int expectedBasePoints = 0;
 	int expectedTicketPoints = 5;
 	int expectedCandyPoints = 1;
-    int expectedBeerPoints = 1; 
-    int expectedPopcornPoints = 1;
+    	int expectedBeerPoints = 1; 
+    	int expectedPopcornPoints = 1;
 	String expectedBaseDescription = "Ticket includes: ";
 	String expectedChildDescription = "\n1 Child Ticket";
 	String expectedAdultDescription = "\n1 Adult Ticket";
