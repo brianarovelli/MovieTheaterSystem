@@ -11,6 +11,7 @@ class TicketTesting {
 	double actualCost;
 	int actualPoints;
 	String actualDescription;
+	Ticket actualTicket;
 	
 	double expectedBaseCost = 0.00;
 	double expectedChildCost = 10.00;
@@ -65,6 +66,11 @@ class TicketTesting {
 				testAdultTicket(ticket);
 			case 2:
 				testSeniorTicket(ticket);
+			case 3:
+				/**
+				 * Unsure how to test methods from driver so this case remains incomplete
+				 */
+				testTicketWriter(ticket);
 			}
 			++num;
 		}
@@ -94,6 +100,7 @@ class TicketTesting {
 		testSeniorAttributes(actual, prevTicket);
 		testPopcornAttributes(actual);
 	}
+
 	/**
 	 * These comments apply to the following three methods in form "test<SubClass>Attributes"
 	 * Updates expected values in each method to validate equality with returned values from getters.
@@ -189,6 +196,21 @@ class TicketTesting {
 		assertEquals(expectedCost, actualCost);
 		assertEquals(expectedPoints, actualPoints);
 		assertEquals(expectedDescription, actualDescription);
+	}
+	
+	void testTicketWriter(BaseTicket baseTicket) {
+		expectedCost = expectedBaseCost + expectedChildCost + (2 * expectedCandyCost);
+		expectedPoints = expectedBasePoints + expectedTicketPoints + (2 * expectedCandyPoints);
+		expectedDescription = expectedBaseDescription + expectedChildDescription + expectedCandyDescription + expectedCandyDescription;
+		
+		actualTicket = new ChildTicket(baseTicket);
+		actualTicket = new Candy(actualTicket);
+		actualTicket = new Candy(actualTicket);
+		actualCost = actualTicket.getCost();
+		actualPoints = actualTicket.getPoints();
+		actualDescription = actualTicket.getDescription();
+		
+		//printTickets(actualTicket);
 	}
 	
 }

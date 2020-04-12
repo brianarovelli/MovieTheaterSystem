@@ -385,7 +385,7 @@ public class MovieDriver {
 	 * Prints ticket information to a separate txt file, printedtickets.txt
 	 * @param ticket - Ticket order
 	 */
-	private static void printTickets(Ticket ticket) {
+	public static void printTickets(Ticket ticket) {
 		File file = new File("src/printedtickets.txt");
 		PrintWriter writer;
 		try {
