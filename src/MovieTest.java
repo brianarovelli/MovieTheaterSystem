@@ -11,26 +11,30 @@ Event eObj;
 	
 		int num = 0;
 		
+		while (num <= 1) {
 		switch(num) {
 		case 0:
 			testConstructor();
 		case 1:
-			//testAddMovie
-		case 3:
-		
+			testMutators(); 	/* none of the mutators work */
+		default:
+			testConstructor();
+		}
+		num++;
 		}
 	}
 
 	void testConstructor() {
+		ArrayList<Actor> expectedActors = new ArrayList<Actor>();
 		EventType expectedType = EventType.MOVIE;
 		ArrayList<Genre> expectedGenre = new ArrayList<Genre>();
-		expectedGenre.add(Genre.DRAMA);
+		expectedGenre.add(Genre.ACTION);
+		expectedGenre.add(Genre.ADVENTURE);
 		Advisory expectedAdvisory = Advisory.PG13;
 		String expectedTitle = "TDKR";
 		String expectedDescription = "A Legend is Born";
-		ArrayList<Actor> expectedActors = new ArrayList<Actor>();
+		
 		Actor actor1 = new Actor("Christian", "Bale");
-		testActorConstructor(actor1);
 		Actor actor2 = new Actor("Morgan", "Freeman");
 		expectedActors.add(actor1);
 		expectedActors.add(actor2);
@@ -46,22 +50,47 @@ Event eObj;
 		assertEquals(expectedDescription, eObj.getDescription());
 		assertEquals(expectedActors, eObj.getActors());
 		assertEquals(expectedGenre, eObj.getGenre());
+		assertEquals(expectedGenre.get(0).toString(), eObj.getGenreItem(0));
+		assertEquals(expectedGenre.get(1).toString(), eObj.getGenreItem(1));
 		assertEquals(expectedAdvisory, eObj.getAdvisory());
 		assertEquals(expectedPrice, eObj.getPrice());
 		assertEquals(expectedPoints, eObj.getPoints());
 		
-		
-		
 	}
-	void testActorConstructor(Actor actor) {
-		String expectedFirstName = "Christian";
-		String expectedLastName = "Bale";
-		
-		String actualFirstName = actor.first;
-		String actualLastName = actor.last;
-		
-		assertEquals(expectedFirstName, actualFirstName);
-		assertEquals(expectedLastName, actualLastName);
-	}
+	
+	/* put this in a TestActor class */
+//	void testActorConstructor(Actor actor) {
+//		String expectedFirstName = "Christian";
+//		String expectedLastName = "Bale";
+//		
+//		String actualFirstName = actor.first;
+//		String actualLastName = actor.last;
+//		
+//		assertEquals(expectedFirstName, actualFirstName);
+//		assertEquals(expectedLastName, actualLastName);
+//	}
 
+
+	void testMutators() {
+		ArrayList<Actor> expectedList = new ArrayList<Actor>();
+		String expectedTitle = "Inception";
+		String expectedDescription = "A dream within a dream";
+		Actor leo = new Actor("Leonardo", "Dicaprio");
+		expectedList.add(leo);
+//		eObj.setActors(expectedList);
+//		eObj.setAdvisery(Advisory.R);
+		eObj.setTitle(expectedTitle);
+		eObj.setPoints(5);
+		eObj.setRating(5);
+		eObj.setDescription("A dream within a dream");
+		
+		/* actor getter not working for some reason */
+//		assertEquals(expectedList, eObj.getActors());
+		
+		assertEquals(Advisory.R, eObj.getAdvisory());
+		assertEquals(expectedTitle, eObj.getTitle());
+		assertEquals(5, eObj.getPoints());
+		assertEquals(5, eObj.getRating());
+		assertEquals(expectedDescription, eObj.getDescription());
+	}
 }

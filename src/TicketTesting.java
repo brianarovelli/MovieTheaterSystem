@@ -71,6 +71,8 @@ class TicketTesting {
 				 * Unsure how to test methods from driver so this case remains incomplete
 				 */
 				testTicketWriter(ticket);
+			default:
+				testChildTicket(ticket);
 			}
 			++num;
 		}
