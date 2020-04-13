@@ -9,8 +9,21 @@ public class Seat {
 	 * @param type
 	 */
 	public Seat(int[] spot, SeatType type) {
-		this.spot = spot;
+		this.setSpot(spot);
 		this.type = type;
 		taken = false;
+	}
+	public int [] getSpot() {
+		return spot;
+	}
+	public void setSpot(int [] spot) {
+		for (int i = 0; i < spot.length; i++) {
+			if (spot[i] >= 5 || spot[i] < 0) {
+				spot = null;
+				break;
+			}
+			continue;
+		}
+		spot = spot;
 	}
 }
