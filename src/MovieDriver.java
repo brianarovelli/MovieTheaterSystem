@@ -385,7 +385,7 @@ public class MovieDriver {
 	 * Prints ticket information to a separate txt file, printedtickets.txt
 	 * @param ticket - Ticket order
 	 */
-	private static void printTickets(Ticket ticket) {
+	public static void printTickets(Ticket ticket) {
 		File file = new File("src/printedtickets.txt");
 		PrintWriter writer;
 		try {
@@ -638,11 +638,12 @@ public class MovieDriver {
 				if(in.hasNextInt()) {
 					if(in.nextInt() == -1) {
 						rep = false;
+						continue;
 					}
 				}
 				genres.add(Genre.valueOf(in.next()));
 			} catch(Exception e) {
-				System.out.println("Invalid entry");
+				//System.out.println("Invalid entry");
 				in.next();
 			}
 		}

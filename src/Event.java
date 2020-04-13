@@ -11,7 +11,7 @@ public class Event {
 	public double rating;
 	public double price;
 	public int points;
-	public Time showTime;
+//	public Time showTime;
 	public ArrayList<Review> reviews;
 	private static final double DEFAULT_TICKET_PRICE = 9.00;
 	
@@ -23,7 +23,7 @@ public class Event {
 	 * @param points
 	 * @param showTime
 	 */
-	public Event(EventType eventType, String title, String description, ArrayList<Actor> actors, ArrayList<Genre> genre, Advisory advisory, double price, int points, Time showTime) {
+	public Event(EventType eventType, String title, String description, ArrayList<Actor> actors, ArrayList<Genre> genre, Advisory advisory, double price, int points) {
 		this.eventType = eventType;
 		this.title = title;
 		this.description = description;
@@ -33,7 +33,7 @@ public class Event {
 		this.rating = 0;
 		this.price = DEFAULT_TICKET_PRICE;
 		this.points = points;
-		this.showTime = showTime;
+//		this.showTime = showTime;
 		reviews = new ArrayList<Review>();
 	}
 	
@@ -72,7 +72,12 @@ public class Event {
 	public String getDescription() {
 		return description;
 	}
-
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public EventType getType() {
+		return this.eventType;
+	}
 	public void setDescription(String description) {
 		this.description = description;
 	}
@@ -92,7 +97,9 @@ public class Event {
 	public void setGenre(ArrayList<Genre> genre) {
 		this.genre = genre;
 	}
-	
+	public void setType(EventType type) {
+		this.eventType = type;
+	}
 	public Advisory getAdvisory() {
 		return advisory;
 	}
@@ -124,7 +131,6 @@ public class Event {
 	public void setRating(double rating) {
 		this.rating = rating;
 	}
-
 	public double getPrice() {
 		return price;
 	}
@@ -141,12 +147,12 @@ public class Event {
 		this.points = points;
 	}
 
-	public Time getShowTime() {
-		return showTime;
-	}
-
-	public void setShowTime(Time showTime) {
-		this.showTime = showTime;
-	}
+//	public Time getShowTime() {
+//		return showTime;
+//	}
+//
+//	public void setShowTime(Time showTime) {
+//		this.showTime = showTime;
+//	}
 	
 }
