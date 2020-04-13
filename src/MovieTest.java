@@ -57,18 +57,6 @@ Event eObj;
 		assertEquals(expectedPoints, eObj.getPoints());
 		
 	}
-	
-	/* put this in a TestActor class */
-//	void testActorConstructor(Actor actor) {
-//		String expectedFirstName = "Christian";
-//		String expectedLastName = "Bale";
-//		
-//		String actualFirstName = actor.first;
-//		String actualLastName = actor.last;
-//		
-//		assertEquals(expectedFirstName, actualFirstName);
-//		assertEquals(expectedLastName, actualLastName);
-//	}
 
 
 	void testMutators() {
