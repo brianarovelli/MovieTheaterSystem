@@ -204,22 +204,54 @@ class TicketTesting {
 	}
 	
 	void testErrorCases(BaseTicket baseTicket) {
+		/*
+		 * Case 1: both row & column are greater than amount of rows & column w/in array representing theater
+		 * Case 2: both row & column are less than amount of rows & column w/in array representing theater
+		 * Case 3: row is greater than amount of rows, column is less than amount of columns
+		 * Case 4: row is less than amount of rows, column is greater than amount of columns
+		 */
 		actualTicket = new ChildTicket(baseTicket);
-		int [] seatChosen = new int [2];
-		for (int i = 0; i < seatChosen.length; ++i) {
-			seatChosen[i] = 5;
+		/* Case 1 */
+		int [] overBounds = new int [2];
+		for (int i = 0; i < overBounds.length; ++i) {
+			overBounds[i] = 5;
 		}
 		/* theater holds 5 by 5 array, so this error case occurs when user enters invalid values for their desired seats */
 		
 		SeatType arbitraryType = SeatType.Normal;
 		
-		Seat seat = new Seat(seatChosen, arbitraryType);
+		Seat case1 = new Seat(overBounds, arbitraryType);
 		
 		/* ensure the invalid entry wasn't set as attribute */
-		assertNotEquals(seat, actualTicket.getSeat());
+		assertNotEquals(case1, actualTicket.getSeat());
 		
 		/* test to determine that spot attribute wasn't erroneously set to the invalid seat entry */
-		assertEquals(false, seat.spotSet());
+		assertEquals(null, case1.getSpot());
+		
+		/* Case 2 */
+		int [] lowerBounds = new int [2];
+		for (int i = 0; i < lowerBounds.length; i++) {
+			lowerBounds[i] = -1;
+		}
+		
+		Seat case2 = new Seat(lowerBounds, arbitraryType);
+		assertNotEquals(case2, actualTicket.getSeat());
+		assertEquals(null, case2.getSpot());
+		
+		/* Case 3 */
+		int [] mixCase1 = new int [2];
+		mixCase1[0] = 5;
+		mixCase1[1] = -1;
+		Seat case3 = new Seat(mixCase1, arbitraryType);
+		assertNotEquals(mixCase1, actualTicket.getSeat());
+		assertEquals(null, case3.getSpot());
+		
+		int [] mixCase2 = new int [2];
+		mixCase2[0] = -1;
+		mixCase2[1] = 5;
+		Seat case4 = new Seat(mixCase2, arbitraryType);
+		assertNotEquals(mixCase2, actualTicket.getSeat());
+		assertEquals(null, case4.getSpot());
 
 	}
 	
