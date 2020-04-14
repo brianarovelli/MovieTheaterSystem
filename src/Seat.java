@@ -26,4 +26,7 @@ public class Seat {
 		}
 		spot = spot;
 	}
+	public boolean spotChosenIsValid () {
+		return spot != null;
+	}
 }
