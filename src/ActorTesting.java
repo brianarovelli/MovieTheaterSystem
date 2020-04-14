@@ -6,8 +6,9 @@ import java.util.ArrayList;
 
 public class ActorTesting {
 	@Test
-	public void testActors() {
+	public boolean testActors() {
 		testActorConstructor(new Actor("Christian", "Bale"));
+		return true;
 	}
 	
 	void testActorConstructor(Actor actor) {

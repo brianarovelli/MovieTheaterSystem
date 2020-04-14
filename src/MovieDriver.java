@@ -48,7 +48,7 @@ public class MovieDriver {
 	/** private static void printMenu()
 	 * Initial menu where user can input number in correspondence with where they want to go
 	 */
-	private static void printMenu() {
+	public static boolean printMenu() {
 		System.out.println("====================");
 		System.out.println(" 1. Explore movies");
 		System.out.println(" 2. Purchase a movie ticket");
@@ -64,6 +64,7 @@ public class MovieDriver {
 		}
 		System.out.println("-1. Quit program");
 		System.out.println("====================");
+		return true;
 	}
 	
 	/** private static void printEvents(ArrayList<Event> events)
@@ -412,7 +413,7 @@ public class MovieDriver {
 	 * User logs into their account in system
 	 * @return
 	 */
-	private static boolean loginMenu() {
+	public static boolean loginMenu() {
 
 		Scanner in = new Scanner(System.in);
 		System.out.println("====================");
@@ -450,6 +451,7 @@ public class MovieDriver {
 	 * @return
 	 */
 	private static boolean userExists(String userName) {
+		accounts = initAccounts();
 		for (Account i : accounts) {
 			if (i.getUsername().equals(userName))
 				return true;

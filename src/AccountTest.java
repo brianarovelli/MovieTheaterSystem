@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 public class AccountTest {
 	
 	@Test
-	public void testAll() {
+	public boolean testAll() {
 		printPassword();
 		changePassword();
 		printInformation();
@@ -21,6 +21,7 @@ public class AccountTest {
 		setType();
 		getEmail();
 		setEmail();
+		return true;
 	}
 
     @Test
@@ -88,7 +89,7 @@ public class AccountTest {
     public void setType() {
         Account account = new Account();
         account.setType(UserType.Guest);
-        assertEquals("Guest", account.getType());
+        assertEquals(UserType.Guest, account.getType());
     }
 
     @Test
@@ -99,6 +100,6 @@ public class AccountTest {
     public void setEmail() {
         Account account = new Account();
         account.setEmail("JoeExotic@TigerKing.com");
-        assertEquals("Joe", account.getEmail());
+        assertEquals("JoeExotic@TigerKing.com", account.getEmail());
     }
 }

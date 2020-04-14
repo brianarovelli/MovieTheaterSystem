@@ -7,7 +7,7 @@ class MovieTest {
 Event eObj;
 
 	@Test
-	void test() {
+	boolean test() {
 	
 		int num = 0;
 		
@@ -22,6 +22,7 @@ Event eObj;
 		}
 		num++;
 		}
+		return true;
 	}
 
 	void testConstructor() {
@@ -65,8 +66,8 @@ Event eObj;
 		String expectedDescription = "A dream within a dream";
 		Actor leo = new Actor("Leonardo", "Dicaprio");
 		expectedList.add(leo);
-//		eObj.setActors(expectedList);
-//		eObj.setAdvisery(Advisory.R);
+		eObj.setActors(expectedList);
+		eObj.setAdvisery(Advisory.R);
 		eObj.setTitle(expectedTitle);
 		eObj.setPoints(5);
 		eObj.setRating(5);

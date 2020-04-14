@@ -40,7 +40,7 @@ class TicketTesting {
 	 * After verifying base constructor creates works, method successively calls helper methods to test subclasses separately.
 	 */
 	@Test
-	void testTicket() {
+	boolean testTicket() {
 		BaseTicket ticket = new BaseTicket();
 		assertNotEquals(ticket, null);
 
@@ -79,6 +79,7 @@ class TicketTesting {
 			}
 			++num;
 		}
+		return true;
 	}
 	/**
 	 *  These comments apply to the following three methods in the form "Test<SubClass>"
