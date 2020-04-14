@@ -41,7 +41,7 @@ public class MovieDatabase {
 	 * @param showTime
 	 */
 	public void addEvent(EventType eventType, String title, String description, ArrayList<Actor> actors, ArrayList<Genre> genre, Advisory advisory, double price, int points, Time showTime) {
-		eventList.add(new Event(eventType, description, description, actors, genre, advisory, price, points, showTime));
+		eventList.add(new Event(eventType, description, description, actors, genre, advisory, price, points));
 		MovieWriter.saveEvents();
 	}
 }

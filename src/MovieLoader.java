@@ -43,7 +43,7 @@ public class MovieLoader extends MovieConstants {
 				}
 				Advisory ad = Advisory.valueOf(movieJSON.get("advisory").toString().toUpperCase());
 				//Add new movie to movie ArrayList
-				movies.add(new Event(EventType.MOVIE, n, d, a, g, ad, 0, 0, null));
+				movies.add(new Event(EventType.MOVIE, n, d, a, g, ad, 0, 0));
 			}
 			return movies;
 		} catch(Exception e) {

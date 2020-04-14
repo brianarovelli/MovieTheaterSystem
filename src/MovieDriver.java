@@ -87,7 +87,7 @@ public class MovieDriver {
 	 * @param events - list of all events
 	 * @return
 	 */
-	private static boolean process(int choice, ArrayList<Event> events) {
+	public static boolean process(int choice, ArrayList<Event> events) {
 		switch(choice) {
 		case -1:
 			return false;
@@ -684,7 +684,7 @@ public class MovieDriver {
 		int t = in.nextInt();
 		Time time = new Time(t, 0, 0);
 		
-		events.add(new Event(eType, eventName, eventDescription, actors, genres, ad, price, points, time));
+		events.add(new Event(eType, eventName, eventDescription, actors, genres, ad, price, points));
 		return true;
 	}
 }

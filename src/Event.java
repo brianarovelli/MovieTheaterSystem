@@ -86,27 +86,32 @@ public class Event {
 		return genre;
 	}
 	
-	public ArrayList<String> getStringGenre() {
-		ArrayList<String> temp = new ArrayList<String>();
-		for(int i = 0; i < genre.size(); i++) {
-			temp.add(genre.get(i).toString());
-		}
-		return temp;
-	}
+//	public ArrayList<String> getStringGenre() {
+//		ArrayList<String> temp = new ArrayList<String>();
+//		for(int i = 0; i < genre.size(); i++) {
+//			temp.add(genre.get(i).toString());
+//		}
+//		return temp;
+//	}
 
+	/* made this method because I'm not sure how to pass in expected values to a testing method to get returned value from above method to equal them */
+	
+	public String getGenreItem(int i) {
+		return genre.get(i).toString();
+	}
 	public void setGenre(ArrayList<Genre> genre) {
 		this.genre = genre;
 	}
 	public void setType(EventType type) {
 		this.eventType = type;
 	}
+	public void setAdvisery(Advisory advisory) {
+		this.advisory = advisory;
+	}
 	public Advisory getAdvisory() {
 		return advisory;
 	}
 
-	public void setAdvisery(Advisory advisory) {
-		this.advisory = advisory;
-	}
 	
 	public String getTitle() {
 		return title;
@@ -131,6 +136,7 @@ public class Event {
 	public void setRating(double rating) {
 		this.rating = rating;
 	}
+
 	public double getPrice() {
 		return price;
 	}
