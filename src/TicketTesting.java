@@ -1,8 +1,9 @@
 import static org.junit.jupiter.api.Assertions.*;
+import java.util.Scanner;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
+import java.util.ArrayList;
 class TicketTesting {
 	double expectedCost;
 	int expectedPoints;
@@ -58,7 +59,7 @@ class TicketTesting {
 		/* Calls from switch statement add upon initialized BaseTicket with all each ticket type separately to test subclasses' functionality */
 		
 		int num = 0;
-		while (num <= 2) {
+		while (num <= 3) {
 			switch(num) {
 			case 0:
 				testChildTicket(ticket);
@@ -67,6 +68,8 @@ class TicketTesting {
 			case 2:
 				testSeniorTicket(ticket);
 			case 3:
+				testErrorCases(ticket); /* need more work on this case's method call */
+			case 4:
 				/**
 				 * Unsure how to test methods from driver so this case remains incomplete
 				 */
@@ -198,6 +201,26 @@ class TicketTesting {
 		assertEquals(expectedCost, actualCost);
 		assertEquals(expectedPoints, actualPoints);
 		assertEquals(expectedDescription, actualDescription);
+	}
+	
+	void testErrorCases(BaseTicket baseTicket) {
+		actualTicket = new ChildTicket(baseTicket);
+		int [] seatChosen = new int [2];
+		for (int i = 0; i < seatChosen.length; ++i) {
+			seatChosen[i] = 5;
+		}
+		/* theater holds 5 by 5 array, so this error case occurs when user enters invalid values for their desired seats */
+		
+		SeatType arbitraryType = SeatType.Normal;
+		
+		Seat seat = new Seat(seatChosen, arbitraryType);
+		
+		/* ensure the invalid entry wasn't set as attribute */
+		assertNotEquals(seat, actualTicket.getSeat());
+		
+		/* test to determine that spot attribute wasn't erroneously set to the invalid seat entry */
+		assertEquals(false, seat.spotSet());
+
 	}
 	
 	void testTicketWriter(BaseTicket baseTicket) {
