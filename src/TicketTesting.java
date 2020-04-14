@@ -44,6 +44,8 @@ class TicketTesting {
 		BaseTicket ticket = new BaseTicket();
 		assertNotEquals(ticket, null);
 
+		testTicketVenue(ticket);
+		
 		expectedCost = expectedBaseCost;
 		expectedDescription = expectedBaseDescription;
 		expectedPoints = expectedBasePoints;
@@ -269,6 +271,12 @@ class TicketTesting {
 		actualDescription = actualTicket.getDescription();
 		
 		//printTickets(actualTicket);
+	}
+	
+	void testTicketVenue(BaseTicket baseTicket) {
+		String defaultVenue = "Default";
+		
+		assertEquals(baseTicket.getVenue().getName(), defaultVenue);
 	}
 	
 }

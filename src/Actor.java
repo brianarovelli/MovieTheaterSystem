@@ -12,6 +12,23 @@ public class Actor {
 		this.last = last;
 	}
 	
+	/** public String getFirstName()
+	 * Returns first name of Actor
+	 * @return
+	 */
+	public String getFirstName() {
+		return first;
+	}
+
+	/** public String getLastName()
+	 * Returns last name of Actor
+	 * @return
+	 */
+	public String getLastName() {
+		return last;
+	}
+
+	
 	/** public String getName()
 	 * Returns full name of Actor
 	 * @return

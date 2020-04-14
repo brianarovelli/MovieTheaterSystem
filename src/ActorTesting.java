@@ -15,11 +15,11 @@ public class ActorTesting {
 	String expectedFirstName = "Christian";
 	String expectedLastName = "Bale";
 	
-	String actualFirstName = actor.first;
-	String actualLastName = actor.last;
+	String actualFirstName = actor.getFirstName();
+	String actualLastName = actor.getLastName();
 	
 	assertEquals(expectedFirstName, actualFirstName);
 	assertEquals(expectedLastName, actualLastName);
 	assertEquals(actor.getName(), expectedFirstName + " " + expectedLastName);
-}
+	}
 }

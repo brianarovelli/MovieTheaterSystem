@@ -59,7 +59,6 @@ Event eObj;
 		
 	}
 
-
 	void testMutators() {
 		ArrayList<Actor> expectedList = new ArrayList<Actor>();
 		String expectedTitle = "Inception";
