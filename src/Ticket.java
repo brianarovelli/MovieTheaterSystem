@@ -4,7 +4,7 @@ public abstract class Ticket {
 	protected Event event;
 	protected String description;
 	protected ArrayList<Seat> seat;
-	protected Venue venue;
+	public Venue venue;
 	
 	/* GETTERS AND SETTERS */ 
 	
@@ -23,10 +23,17 @@ public abstract class Ticket {
 	public Venue getVenue() {
 		return venue;
 	}
+	public int getAmountOfSeats() {
+		return venue.getAmountOfSeatsInTheater();
+	}
 	public void setVenue(Venue venue) {
 		this.venue = venue;
 	}
 	public abstract double getCost();
 	
 	public abstract int getPoints();
+	
+	public int decrementSeatsLeft() {
+		return this.venue.decSeatsLeft();
+	}
 }

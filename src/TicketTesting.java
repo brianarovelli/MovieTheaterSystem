@@ -199,25 +199,101 @@ class TicketTesting {
 		assertEquals(expectedDescription, actualDescription);
 	}
 	
+	/**
+	 * Error Testing for seat chosen out of bounds and customer chooses greater amount of tickets to purchase than are available in theater
+	 * @param baseTicket
+	 */
 	void testErrorCases(BaseTicket baseTicket) {
+		/*
+		 * Case 1: both row & column are greater than amount of rows & column w/in array representing theater
+		 * Case 2: both row & column are less than amount of rows & column w/in array representing theater
+		 * Case 3: row is greater than amount of rows, column is less than amount of columns
+		 * Case 4: row is less than amount of rows, column is greater than amount of columns
+		 */
 		actualTicket = new ChildTicket(baseTicket);
-		int [] seatChosen = new int [2];
-		for (int i = 0; i < seatChosen.length; ++i) {
-			seatChosen[i] = 5;
+		/* Case 1 */
+		int [] overBounds = new int [2];
+		for (int i = 0; i < overBounds.length; ++i) {
+			overBounds[i] = 5;
 		}
 		/* theater holds 5 by 5 array, so this error case occurs when user enters invalid values for their desired seats */
 		
 		SeatType arbitraryType = SeatType.Normal;
 		
-		Seat seat = new Seat(seatChosen, arbitraryType);
+		Seat case1 = new Seat(overBounds, arbitraryType);
 		
 		/* ensure the invalid entry wasn't set as attribute */
-		assertNotEquals(seat, actualTicket.getSeat());
+		assertNotEquals(case1, actualTicket.getSeat());
 		
-		seat.setSpot(seatChosen);
-		/* test to determine that seat was succeesfully set to null, if null, driver appropriately responds until seat entered is legitimate */
-		assertEquals(false, seat.spotChosenIsValid());
+		/* test to determine that spot attribute wasn't erroneously set to the invalid seat entry */
+		assertEquals(null, case1.getSpot());
+		
+		/* Case 2 */
+		int [] lowerBounds = new int [2];
+		for (int i = 0; i < lowerBounds.length; i++) {
+			lowerBounds[i] = -1;
+		}
+		
+		Seat case2 = new Seat(lowerBounds, arbitraryType);
+		assertNotEquals(case2, actualTicket.getSeat());
+		assertEquals(null, case2.getSpot());
+		
+		/* Case 3 */
+		int [] mixCase1 = new int [2];
+		mixCase1[0] = 5;
+		mixCase1[1] = -1;
+		Seat case3 = new Seat(mixCase1, arbitraryType);
+		assertNotEquals(mixCase1, actualTicket.getSeat());
+		assertEquals(null, case3.getSpot());
+		
+		/* Case 4 */
+		int [] mixCase2 = new int [2];
+		mixCase2[0] = -1;
+		mixCase2[1] = 5;
+		Seat case4 = new Seat(mixCase2, arbitraryType);
+		assertNotEquals(mixCase2, actualTicket.getSeat());
+		assertEquals(null, case4.getSpot());
+		
+		/* Error Case -- User tries to purchase more tickets than amount of seats availible in theater
+		 *
+		 * Venue holds 5 x 5 array, amount of seats contained in that array accessed through getter in Ticket class that instantiates Venue -- which method to return result
+		 * Each time a new ticket is made, decrements, by 1, a variable initialized to amount of seats in theater to signify that now there is one less amount of tickets available
+		 * Assume user enters larger value for any ticket prompt...
+		 */
+		Seat [][] s = new Seat[1][1];
+		s[0][0] = case2;	// doesn't really matter for these testing purposes
+		
+		ArrayList<Review> r = new ArrayList<Review>();
+		Venue arbitrary = new Venue("name",32.0,5,5,s,r);
+		actualTicket.setVenue(arbitrary);
+		
+		assertEquals(arbitrary, actualTicket.getVenue());
+		
+		int userChooseThisAmountOfTickets = 40;
+		
+		/*
+		 * Variable initialized to amount of tickets available in venue initially is decremented for each new ticket purchase
+		 */
+		boolean expectedBool = false;
+		boolean actualBool;
+		int actual = arbitrary.getAmountOfSeatsInTheater();
 
+		assertEquals(5*5, actual);
+		
+		/* if next assertion yields true, we can logically assume for loop will correctly yeild one less less value than previous iteration, until no more seats left! */
+		
+		actual = arbitrary.decSeatsLeft();
+		
+		assertEquals(5*5-1, actual);
+		actual = actual+1;
+		
+		for (int i = 0; i < userChooseThisAmountOfTickets; i++) {
+			actual = arbitrary.decSeatsLeft();
+		}
+		/* if this assertion is true, code will not allow purchase */
+		actualBool = arbitrary.canPurchaseThisAmount();
+		assertEquals(expectedBool, actualBool);
+		
 	}
 	
 }

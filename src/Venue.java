@@ -6,6 +6,9 @@ public class Venue {
 	private int rows,cols;
 	private Seat[][] seats;
 	private ArrayList<Review> reviews;
+	private int amountOfSeatsInTheater;
+	public int amountOfSeatsLeft = amountOfSeatsInTheater;
+	
 	/**
 	 * General Constructor
 	 * @param name
@@ -22,6 +25,8 @@ public class Venue {
 		this.cols = cols;
 		this.seats = seats;
 		this.reviews = reviews;
+		this.amountOfSeatsInTheater = rows*cols;
+		this.amountOfSeatsLeft = this.amountOfSeatsInTheater;
 	}
 
 	/* GETTERS AND SETTERS */ 
@@ -72,5 +77,14 @@ public class Venue {
 
 	public void setReviews(ArrayList<Review> reviews) {
 		this.reviews = reviews;
+	}
+	public int getAmountOfSeatsInTheater() {
+		return amountOfSeatsInTheater;
+	}
+	public int decSeatsLeft() {
+		return amountOfSeatsLeft = amountOfSeatsLeft - 1;
+	}
+	public boolean canPurchaseThisAmount() {
+		return amountOfSeatsLeft >= 0;
 	}
 }
