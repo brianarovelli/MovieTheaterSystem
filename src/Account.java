@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public abstract class Account {
+public class Account {
 	protected String firstName;
 	protected String lastName;
 	protected String username;

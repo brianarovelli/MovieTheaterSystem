@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class ActorTesting {
 	@Test
-	void testActors() {
+	public void testActors() {
 		testActorConstructor(new Actor("Christian", "Bale"));
 	}
 	
