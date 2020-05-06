@@ -4,6 +4,6 @@
 
 # Administrators & Employees representing the client's company have the ability to do all the same things as the consumers, but can also add/delete movies. However, a unique part about our design involves the web-scraping aspect of how are JSON files operate. Automating the process a bit for administrators & employees.
 
-# The video below is our virtual presentation to a prospective buyer, including a walkthrough of our prototype which was made using proto.io.
+# The video below is our virtual presentation to a prospective buyer, including a walkthrough of our prototype that was made using proto.io.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3Q3nu4E2CQ8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+https://www.youtube.com/embed/3Q3nu4E2CQ8
